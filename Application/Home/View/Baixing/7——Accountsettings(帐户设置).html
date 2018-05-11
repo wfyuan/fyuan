@@ -1,0 +1,127 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>百姓贷</title>
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileColor" content="#0e90d2">
+  <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+  <!--
+  <link rel="canonical" href="http://www.example.com/">
+  -->
+
+  <link rel="stylesheet" href="assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+
+   <link rel="stylesheet" href="assets/font/iconfont.css">
+
+
+  <!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/echarts.min.js"></script>
+<style>
+	body{ color:#ffffff; background: #f0f0f0;}
+	.am-header-default{ background: #ffffff;}
+ .am-header-default .am-header-title a{ color:#455576;}
+ .am-header-default .am-header-icon{ color: #455576;}
+ .am-list-static.am-list-border>li{ padding:0.5rem;}
+ a{ color: #455576;}
+ .am-list>li{ padding: 0 5%; border: none; border-bottom:1px solid #ebebeb; }
+ .am-divider-default{}
+ .am-list>li>a{ display: inline-block;}
+ .am-header .am-header-left{left: 0; left: 6%;}
+ .am-list>li{ padding: 0 6%;}
+</style>
+</head>
+<body>
+       <header data-am-widget="header"
+          class="am-header am-header-default am-margin-0">
+      <div class="am-header-left am-header-nav">
+          <a href="#left-link" class="">
+
+                <i class="am-header-icon am-icon-angle-left" style="font-size: 28px;"></i>
+          </a>
+      </div>
+
+      <h1 class="am-header-title">
+          <a href="#title-link" class="">
+            帐户设置
+          </a>
+      </h1>
+
+      <div class="am-header-right am-header-nav">
+          <!--<a href="#right-link" class="">
+
+                <i class="am-header-icon am-icon-cog"></i>
+          </a>-->
+      </div>
+  </header>
+    <hr data-am-widget="divider" style="" class="am-divider am-divider-default am-margin-0 am-padding-0" />
+
+  <ul class="am-list m-widget-list am-padding-top-0 am-margin-top-0">
+  	<li style="background: none;">
+  		<a href="/widgets/accordion" data-rel="accordion">
+  			 <i class="am-icon-user" style=" color: #9999cc; font-size: 24px; margin-right: 7px;"></i> <span class="widget-name">个人信息</span></a></li>
+  	<li class="am-margin-bottom-0">
+  		<a href="/widgets/accordion" data-rel="accordion">
+  			<span class="widget-name">实名认证</span></a>
+  			 <i class="am-icon-angle-right am-fr" style="color: #c6c5c5; font-size: 25px; margin-top: 2px;"></i>
+  			<span class=" am-fr" style="display: inline-block; line-height: 18px; padding-top: 5px; color: #878686; font-size: 1.3rem;">杨*蕾<br>320823******208</span>
+  	   
+  	</li>
+  			 <li class="am-margin-bottom-0">
+  		<a href="/widgets/accordion" data-rel="accordion">
+  			<span class="widget-name">绑定银行卡</span></a>
+  			 <i class="am-icon-angle-right am-fr" style="color: #c6c5c5; font-size: 25px; margin-top: 2px;"></i>
+  			<span class=" am-fr" style="display: inline-block; line-height: 18px; padding-top: 5px; color: #878686; font-size: 1.3rem;">建设银行 <br>320823******208</span>
+  	   
+  	</li>
+  	
+  	<li style="background: none;">
+  		<a href="/widgets/accordion" data-rel="accordion">
+  			 <i class="am-icon-shield" style=" color: #edc54b; font-size: 24px; margin-right: 7px;"></i> <span class="widget-name">安全信息</span></a></li>
+  	<li class="am-margin-bottom-0">
+  		<a href="/widgets/accordion" data-rel="accordion">
+  			<span class="widget-name">登陆密码</span></a>
+  			 <i class="am-icon-angle-right am-fr" style="color: #c6c5c5; font-size: 25px; margin-top: 2px;"></i>
+  	</li>
+  			 <li class="am-margin-bottom-0">
+  		<a href="/widgets/accordion" data-rel="accordion">
+  			<span class="widget-name">交易密码</span></a>
+  			 <i class="am-icon-angle-right am-fr" style="color: #c6c5c5; font-size: 25px; margin-top: 2px;"></i>
+  	</li>
+  	<li style="background: none;">
+  		<a href="/widgets/accordion" data-rel="accordion">
+  			 <i class="icon iconfont icon-shouji1" style=" color: #99cc99; font-size: 24px;"></i> <span class="widget-name">账户信息</span></a></li>
+  	<li class="am-margin-bottom-0">
+  		<a href="/widgets/accordion" data-rel="accordion">
+  			<span class="widget-name">绑定手机号</span></a>
+  			 <i class="am-icon-angle-right am-fr" style="color: #c6c5c5; font-size: 25px; margin-top: 2px;"></i>
+  			<span class=" am-fr" style="display: inline-block; line-height: 18px; padding-top: 5px; color: #878686; font-size: 1.3rem; margin-top: 9px;">187****3208 </span>
+  	</li>
+  			 <li class="am-margin-bottom-0">
+  		<a href="/widgets/accordion" data-rel="accordion">
+  			<span class="widget-name">绑定邮箱</span></a>
+  			  <i class="am-icon-angle-right am-fr" style="color: #c6c5c5; font-size: 25px; margin-top: 2px;"></i>
+  			<span class=" am-fr" style="display: inline-block; line-height: 18px; padding-top: 11px; color: #878686; font-size: 1.3rem; margin-top: 3px;">819462243@qq.com</span>
+  	</li>
+  </ul>
+</body>
+</html>

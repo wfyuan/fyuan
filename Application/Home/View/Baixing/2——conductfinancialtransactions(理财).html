@@ -1,0 +1,356 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>百姓贷</title>
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileColor" content="#0e90d2">
+  <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+  <!--
+  <link rel="canonical" href="http://www.example.com/">
+  -->
+  <link rel="stylesheet" href="assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+   <link rel="stylesheet" href="assets/font/iconfont.css">
+  <link rel="stylesheet" type="text/css" href="https://cgtzfiles.b0.upaiyun.com/style3/css/newMember20160309.css?v=1467105333" />
+  <!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/echarts.min.js"></script>
+<script src="assets/js/app.js"></script>
+
+<style>
+	body{ color:#ffffff; background: #f0f0f0;}
+	.am-header-default{ background: #ffffff;}
+ .am-header-default .am-header-title a{ color:#455576;}
+ .am-header-default .am-header-icon{ color: #455576;}
+.am-header-default .am-header-nav>a{ color: #455576; font-size: 1.3rem;}
+.am-g{ background: #ffffff; color: #455576; font-size: 1.5rem; padding: 0 2%;}
+ .am-header-default{ height: 56px; line-height:56px;}
+  body, button, input, select, textarea{color: #455576; font-size: 1.4rem;}
+  [data-am-widget=tabs]{ margin: 0;}
+  [data-am-widget=tabs] .am-tabs-nav{ margin:  0; background: #ffffff; padding: 13px 10%;}
+  .am-tabs-default .am-tabs-nav>.am-active a{ background: #fa676d;}
+  .am-tabs-bd{ border: none; }
+  .am-tabs-bd h3{ background: #f0f0f0; padding: 0; margin: 0; height: 50px; line-height: 50px; font-size: 1.5rem; color: #fa676d; font-weight: normal;}
+  .am-tabs-bd h3 a{ background: #f0f0f0; padding: 0; margin: 0; height: 50px; line-height: 50px; font-size: 1.5rem; color: #fa676d; font-weight: normal;}
+  .am-tabs-bd h3.h_2 a{ color:#99cc99;}
+  .am-tabs-bd h3.h_3 a{ color:#edc54b;}
+  .am-tabs-bd .am-tab-panel{ padding-left: 0; padding-right: 0; padding-top: 0;}
+  [class*=am-u-]{ color: #b5b5b5;}
+  
+.am-tabs-default .am-tabs-nav .am-active a.a_1{ background:#99cc99; color:#ffffff;}
+.am-tabs-default .am-tabs-nav  a.a_1{background:#e9f0e9; color:#585858; border-top-left-radius:5px; border-bottom-left-radius:5px;}
+.am-tabs-default .am-tabs-nav .am-active a.a_3{ background:#edc54b; color:#ffffff;}
+.am-tabs-default .am-tabs-nav  a.a_3{background:#f4f1ea; color:#585858; border-top-right-radius:5px; border-bottom-right-radius:5px;}
+.am-tabs-default .am-tabs-nav  a.a_2{ background:#f9edee}
+.am-tabs-default .am-tabs-nav .am-active a.a_2{ background:#fa676d; color:#ffffff;}
+ 
+ 	.am-navbar-default .am-navbar-nav{ background: #f6f6f6; border-top:#ebebeb solid 1px;}
+	.am-navbar-default .am-navbar-nav a{ color: #67728b;}
+	
+	.am-navbar{ height: 56px; line-height: 56px;}
+  
+/*环形加载进度条css*/  
+.wrap,.circle,.percent{position: absolute;width: 50px; height: 50px;border-radius: 50%;}  
+.wrap{top:5px;left:50%; margin-left: -25px; background-color: #ccc;}  
+.circle{box-sizing: border-box; border:2px solid #ccc; clip:rect(0,50px,50px,25px);}  
+.clip-auto{ clip:rect(auto, auto, auto, auto);}  
+.percent{box-sizing: border-box; top:-2px; left:-2px;}  
+.left{ transition:transform ease; border:2px solid #fa676d; clip: rect(0,25px,50px,0); transition: 0s; }  
+.right{ border:2px solid #fa676d; clip: rect(0,50px,50px,25px);transition: 0s; }  
+.wth0{width:0;}  
+.num{position: absolute; box-sizing: border-box; width: 46px;height: 46px;line-height: 46px;text-align: center;font-size: 12px;
+ left: 2px; top: 2px;border-radius: 50%; background-color: #fff; z-index: 1; }  
+.num span.number{ font-size: 12px; color: #999;} 
+</style>
+</head>
+<body>
+       <header data-am-widget="header"
+          class="am-header am-header-default am-margin-0">
+      <div class="am-header-left am-header-nav">
+          <a href="#left-link" class=""><i class="am-header-icon am-icon-angle-left" style="font-size: 28px;"></i></a>
+      </div>
+
+      <h1 class="am-header-title">
+          <a href="#title-link" class="">理财</a>
+      </h1>
+      <div class="am-header-right am-header-nav">        
+      </div>
+  </header>
+    <hr data-am-widget="divider" style="" class="am-divider am-divider-default am-margin-0 am-padding-0" />
+   <div class="transactions">
+   	      <div data-am-widget="tabs"   class="am-tabs am-tabs-default">
+      <ul class="am-tabs-nav am-cf">
+          <li class=""><a  href="[data-tab-panel-0]" class="a_1">新手标</a></li>
+          <li style=" margin: 0 2px;" class="am-active"><a href="[data-tab-panel-1]" class="a_2">品牌标</a></li>
+          <li class=""><a href="[data-tab-panel-2]" class="a_3">信用标</a></li>
+      </ul>
+      <div class="am-tabs-bd">
+          <div data-tab-panel-0 class="am-tab-panel">
+               <h3 class="am-text-center h_2"><a href="#">品牌标简介<em class="icon iconfont icon-youjiantou"></em></a></h3>
+               <div class="con">
+               	    <div class="con_n">
+               	    	   <div  class="tit tit_2"><span>品</span>TYB-2016-1107-001 | 总额30000元</div>
+               	    	   <div class="con_con con_2">
+               	    	   	    <div class="am-g">
+																	  <div class="am-u-sm-4">年化收益率<br><span>15.00%+1%</span></div>
+																	  <div class="am-u-sm-4">投资期限<br><strong>1天</strong></div>
+																	  <div class="am-u-sm-4">
+																	  	<div class="wrap">  
+																					    <div class="circle" style="">  
+																					        <div class="percent left" style="color: #000000;"></div>  
+																					        <div class="percent right wth0"></div>  
+																					    </div>  
+																					    <div class="num"><span data-num = "90" class="number">90</span>%</div>  
+																					</div> 
+																	  </div>
+                             </div>
+               	    	   </div>
+               	    </div>
+               </div>
+               
+               <div class="con">
+               	    <div class="con_n">
+               	    	   <div  class="tit tit_2"><span>品</span>TYB-2016-1107-001 | 总额30000元</div>
+               	    	   <div class="con_con con_2">
+               	    	   	    <div class="am-g">
+																	  <div class="am-u-sm-4">年化收益率<br><span>15.00%</span></div>
+																	  <div class="am-u-sm-4 am-text-center">投资期限<br><strong>1天</strong></div>
+																	  <div class="am-u-sm-4">
+																	  	<div class="wrap">  
+																					    <div class="circle" style="">  
+																					        <div class="percent left"></div>  
+																					        <div class="percent right wth0"></div>  
+																					    </div>  
+																					    <div class="num"><span data-num = "90" class="number">90</span>%</div>  
+																					</div> 
+																	  </div>
+                             </div>
+               	    	   </div>
+               	    </div>
+               </div>
+               
+               <div class="con">
+               	    <div class="con_n">
+               	    	   <div  class="tit tit_2"><span class="sp_1">品</span>TYB-2016-1107-001 | 总额30000元</div>
+               	    	   <div class="con_con con_2">
+               	    	   	    <div class="am-g">
+																	  <div class="am-u-sm-4">年化收益率<br><span>15.00%</span></div>
+																	  <div class="am-u-sm-4">投资期限<br><strong>1天</strong></div>
+																	  <div class="am-u-sm-4">
+																	  	<div class="wrap">  
+																					    <div class="circle" style="">  
+																					        <div class="percent left"></div>  
+																					        <div class="percent right wth0"></div>  
+																					    </div>  
+																					    <div class="num"><span data-num = "90" class="number">90.00</span>%</div>  
+																					</div> 
+																	  </div>
+                             </div>
+               	    	   </div>
+               	    </div>
+               </div>
+               
+          </div>
+          <div data-tab-panel-1 class="am-tab-panel  am-active ">
+               
+                <h3 class="am-text-center"><a href="#">品牌标简介<em class="icon iconfont icon-youjiantou"></em></a></h3>
+               <div class="con">
+               	    <div class="con_n">
+               	    	   <div class="tit"><span>品</span>TYB-2016-1107-001 | 总额30000元</div>
+               	    	   <div class="con_con con_1">
+               	    	   	    <div class="am-g">
+																	  <div class="am-u-sm-4 am-padding-horizontal-0">年化收益率<br><span>15%</span></div>
+																	  <div class="am-u-sm-4">投资期限<br><strong>1天</strong></div>
+																	  <div class="am-u-sm-4">
+																	  	    <div class="wrap">  
+																					    <div class="circle" style="">  
+																					        <div class="percent left"></div>  
+																					        <div class="percent right wth0"></div>  
+																					    </div>  
+																					    <div class="num"><span data-num = "90" class="number">90</span>%</div>  
+																					</div>  
+																	  </div>
+                             </div>
+               	    	   </div>
+               	    </div>
+               </div>
+               
+               <div class="con">
+               	    <div class="con_n">
+               	    	   <div class="tit"><span>品</span>TYB-2016-1107-001 | 总额30000元</div>
+               	    	   <div class="con_con con_1">
+               	    	   	    <div class="am-g">
+																	  <div class="am-u-sm-4 am-padding-horizontal-0">年化收益率<br><span>15%</span></div>
+																	  <div class="am-u-sm-4">投资期限<br><strong>1天</strong></div>
+																	  <div class="am-u-sm-4">																	  	
+																	  	<div class="wrap">  
+																					    <div class="circle">  
+																					        <div class="percent left"></div>  
+																					        <div class="percent right wth0"></div>  
+																					    </div>  
+																					    <div class="num"><span data-num = "30" class="number">30</span>%</div>  
+																				</div>  																	  	
+																	  </div>
+                             </div>
+               	    	   </div>
+               	    </div>
+               </div>
+               
+               <div class="con">
+               	    <div class="con_n">
+               	    	   <div class="tit"><span class="sp_1">品</span>TYB-2016-1107-001 | 总额30000元</div>
+               	    	   <div class="con_con con_1">
+               	    	   	    <div class="am-g">
+																	  <div class="am-u-sm-4 am-padding-horizontal-0">年化收益率<br><span>15%</span></div>
+																	  <div class="am-u-sm-4">投资期限<br><strong>1天</strong></div>
+																	  <div class="am-u-sm-4">
+																	  	<div class="wrap">  
+																					    <div class="circle" style="">  
+																					        <div class="percent left"></div>  
+																					        <div class="percent right wth0"></div>  
+																					    </div>  
+																					    <div class="num"><span data-num = "70" class="number">70</span>%</div>  
+																					</div> 
+																	  </div>
+                             </div>
+               	    	   </div>
+               	    </div>
+               </div>
+               
+          </div>
+          <div data-tab-panel-2 class="am-tab-panel ">
+            
+             <h3 class="am-text-center h_3"><a href="#">品牌标简介<em class="icon iconfont icon-youjiantou"></em></a></h3>
+               <div class="con">
+               	    <div class="con_n">
+               	    	   <div class="tit tit_3"><span>品</span>TYB-2016-1107-001 | 总额30000元</div>
+               	    	   <div class="con_con con_3">
+               	    	   	    <div class="am-g">
+																	  <div class="am-u-sm-4">年化收益率<br><span>15%</span></div>
+																	  <div class="am-u-sm-4">投资期限<br><strong>1天</strong></div>
+																	  <div class="am-u-sm-4">
+																	  	<div class="wrap">  
+																					    <div class="circle" style="">  
+																					        <div class="percent left"></div>  
+																					        <div class="percent right wth0"></div>  
+																					    </div>  
+																					    <div class="num"><span data-num = "90" class="number">90</span>%</div>  
+																					</div> 
+																	  </div>
+                             </div>
+               	    	   </div>
+               	    </div>
+               </div>
+               
+               <div class="con">
+               	    <div class="con_n">
+               	    	   <div class="tit tit_3"><span>品</span>TYB-2016-1107-001 | 总额30000元</div>
+               	    	   <div class="con_con con_3">
+               	    	   	    <div class="am-g">
+																	  <div class="am-u-sm-4">年化收益率<br><span>15%</span></div>
+																	  <div class="am-u-sm-4">投资期限<br><strong>1天</strong></div>
+																	  <div class="am-u-sm-4">
+																	  	<div class="wrap">  
+																					    <div class="circle" style="">  
+																					        <div class="percent left"></div>  
+																					        <div class="percent right wth0"></div>  
+																					    </div>  
+																					    <div class="num"><span data-num = "90" class="number">90</span>%</div>  
+																					</div> 
+																	  </div>
+                             </div>
+               	    	   </div>
+               	    </div>
+               </div>
+               
+               <div class="con">
+               	    <div class="con_n">
+               	    	   <div class="tit tit_3"><span class="sp_1">品</span>TYB-2016-1107-001 | 总额30000元</div>
+               	    	   <div class="con_con con_3">
+               	    	   	    <div class="am-g">
+																	  <div class="am-u-sm-4">年化收益率<br><span>15%</span></div>
+																	  <div class="am-u-sm-4">投资期限<br><strong>1天</strong></div>
+																	  <div class="am-u-sm-4">
+																	  	<div class="wrap">  
+																					    <div class="circle" style="">  
+																					        <div class="percent left"></div>  
+																					        <div class="percent right wth0"></div>  
+																					    </div>  
+																					    <div class="num"><span data-num = "60" class="number">60</span>%</div>  
+																					</div> 
+																	  </div>
+                             </div>
+               	    	   </div>
+               	    </div>
+               </div>
+               
+          </div>
+      </div>
+  </div>
+
+   </div>
+   
+   <!--底部工具栏-->
+  <div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default "id="">
+      <ul class="am-navbar-nav am-cf am-avg-sm-4" >
+           <li  class="li_1" >
+            <a href="###"   >
+                  <em class="e_1"></em>
+                <span class="am-navbar-label">理财</span>
+            </a>
+          </li>
+          <li  class="li_2" >
+            <a href="###" class="text-yellow" >
+                  <em class="e_22"></em>
+                <span class="am-navbar-label">理财</span>
+            </a>
+          </li>
+          <li class="li_3"  >
+            <a href="#">
+                  <em class="e_3"></em>
+                <span class="am-navbar-label">发现</span>
+            </a>
+          </li>
+           <li  class="li_4">
+            <a href="#" >
+                  <em class="e_4"></em>
+                <span class="am-navbar-label">我的</span>
+            </a>
+          </li>
+      </ul>
+  </div>
+<script>
+
+$(function(){
+	$("body,html").css({"overflow":"hidden"}); 
+	  //环形加载进度条调用，多个用each分个调用
+    $('.wrap').each(function(i){
+    	 var num = $(this).find('span.number').data('num');
+			 $(this).circleBar({'time':'20','progress':num});
+		});		
+		
+})
+
+</script>  
+ 
+ 
+ 
+</body>
+</html>

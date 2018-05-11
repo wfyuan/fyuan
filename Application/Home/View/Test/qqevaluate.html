@@ -1,0 +1,40 @@
+<h3 class="am-text-center am-padding-top-lg">
+    <img style="width: 120px;" src="__IMG__/test/doubleqq.jpg">
+</h3>
+<div class="am-u-lg-6 am-u-sm-12 am-u-lg-offset-3">
+    <div class="am-input-group">
+        <input type="text" value="{$ret.qq}" required maxlength="12" name="qq" class="am-form-field">
+      <span class="am-input-group-btn">
+        <button class="am-btn gosearch am-btn-secondary" type="button">手气还行</button>
+      </span>
+    </div>
+</div>
+<notempty name="ret.score">
+<article data-am-widget="paragraph"  class="am-paragraph am-paragraph-default" data-am-paragraph="{ tableScrollable: true, pureview: true }">
+    <p style="padding-top: 55px;">
+        <span>评分：{$ret.score}</span><br>
+        <span>凶吉：{$ret.grade}</span>
+    </p>
+    <p id="analysis"><span class="am-text-primary">命理解析：</span><br>{$ret.analysis}</p>
+    <p id="desc"><span class="am-text-primary">详细描述：</span><br>{$ret.desc}</p>
+    <p id="ckepop">
+        <span class="jiathis_txt">分享到：</span>
+        <a class="jiathis_button_qzone">空间</a>
+        <a class="jiathis_button_cqq">好友</a>
+        <a class="jiathis_button_copy">复制网址</a>
+    </p>
+</article>
+<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+</notempty>
+<script>
+$(function(){
+    $("button.gosearch").click(function(){
+        var qq = $('input[type="text"]').val();
+        if(!/^\d{6,12}$/.test(qq)){
+            alert('请正确填写QQ号码！');
+            return false;
+        }
+        window.location = "/Home/test/qqevaluate" + '?qq=' +qq ;
+    });
+});
+</script>

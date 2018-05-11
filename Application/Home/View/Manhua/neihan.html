@@ -1,0 +1,62 @@
+<include file="./Application/Home/View/Manhua/title.html" />
+<div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+    <!--列表标题-->
+    <div class="am-list-news-hd am-cf">
+        <!--带更多链接-->
+        <h2>第{$list.currentPage}页&nbsp;漫画列表</h2>
+
+        <form class="am-form ">
+            <div class="am-form-group am-fr am-margin-0" style="width: 180px;">
+                <label for="doc-ipt-pwd-2" class="am-u-sm-6 am-form-label am-padding-right-0 am-text-right">快捷調頁</label>
+                <div class="am-u-sm-6 am-padding-right-0">
+                    <select style="padding: 0.2em" id="fastPage" class="am-form-field ">
+                        <volist name="list['pagebean']['fastPage']" id="v" key="k">
+                            <option value="/Home/manhua/neihan/p/{$v}" <if condition="$list['currentPage'] eq $v">selected</if>>第{$v}页</option>
+                        </volist>
+                    </select>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <div class="am-list-news-bd">
+        <ul class="am-list">
+            <volist name="list['pagebean']['contentlist']" id="v" key="k">
+                <li class="am-g manhuaList">
+                    <a href="/home/manhua/mhdetail{$v.id}" class="am-list-item-hd am-text-sm am-padding-vertical-xs">
+                        {$v.item}、{$v.title}
+                    </a>
+                </li>
+            </volist>
+        </ul>
+    </div>
+</div>
+<ul class="am-pagination am-pagination-centered">
+    <if condition="$list['currentPage'] neq 1">
+        <li><a href="{:U('xiuxian/neihan',array('p'=>$list['currentPage']-1))}">&laquo;</a></li>
+        <if condition="$list['currentPage'] neq 2">
+            <li><a href="{:U('xiuxian/neihan',array('p'=>$list['currentPage']-2))}">{$list['currentPage']-2}</a></li>
+        </if>
+        <li><a href="{:U('xiuxian/neihan',array('p'=>$list['currentPage']-1))}">{$list['currentPage']-1}</a></li>
+    </if>
+    <li  class="am-active"><a href="javascript:void(0);">{$list.currentPage}</a></li>
+    <if condition="$list['currentPage'] LT $list['pagebean']['allPages']">
+        <li><a href="{:U('xiuxian/neihan',array('p'=>$list['currentPage']+1))}">{$list['currentPage']+1}</a></li>
+        <if condition="$list['currentPage'] LT $list['pagebean']['allPages']-1">
+            <li><a href="{:U('xiuxian/neihan',array('p'=>$list['currentPage']+2))}">{$list['currentPage']+2}</a></li>
+        </if>
+        <li><a href="{:U('xiuxian/neihan',array('p'=>$list['currentPage']+1))}">&raquo;</a></li>
+    </if>
+</ul>
+<style>
+    .manhuaList a{ color: #777; }
+    .am-pagination>li>a, .am-pagination>li>span{padding: .3em 0.7em;}
+</style>
+<script>
+    $(function(){
+        $('#fastPage').change(function(){
+            var goPage = $(this).val();
+            window.location.href = goPage;
+        });
+    })
+</script>

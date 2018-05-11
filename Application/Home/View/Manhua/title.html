@@ -1,0 +1,43 @@
+<header data-am-widget="header"  class="am-header am-header-default" data-am-sticky>
+    <div class="am-header-left am-header-nav">
+        <a onclick="javascript:history.back(-1);" href="javascript:;" class="">
+            <i class="am-header-icon am-icon-chevron-left"></i>
+        </a>
+    </div>
+    <h1 class="am-header-title">
+        <a href="javascript:;" class="">{$title}</a>
+    </h1>
+    <div class="am-header-right am-header-nav am-dropdown">
+        <a href="#doc-oc-demo1" class="am-dropdown-toggle" data-am-offcanvas="{effect: 'push'}">
+            <i class="am-header-icon am-icon-bars"></i>
+        </a>
+    </div>
+</header>
+<div id="doc-oc-demo1" class="am-offcanvas">
+    <div class="am-offcanvas-bar am-offcanvas-bar-flip">
+        <ul class="am-menu-nav am-avg-sm-2 public_nav">
+            <li class="">
+            </li>
+            <li class="">
+                <a href="{:U('manhua/index')}" class="am-btn am-btn-default">智友漫画</a>
+            </li>
+            <li class="">
+                <a href="{:U('manhua/heibai')}" class="am-btn am-btn-default">恐怖漫画</a>
+            </li>
+            <li class="">
+                <a href="{:U('manhua/neihan')}" class="am-btn am-btn-default">内涵漫画</a>
+            </li>
+            <li class="">
+                <a href="{:U('manhua/heibai',array('type'=>2))}" class="am-btn am-btn-default">故事漫画</a>
+            </li>
+            <li class="">
+                <a href="{:U('manhua/heibai',array('type'=>13))}" class="am-btn am-btn-default">插画</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<style>
+    .public_nav{ padding: 1em 0.5em;}
+    .public_nav li{ padding: 0.3em 0.5em; opacity: 0.7;}
+    .public_nav li .am-btn-default{ background-color:#404040; color: #ccc; border: 1px solid #666;}
+</style>

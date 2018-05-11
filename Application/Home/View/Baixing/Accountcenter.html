@@ -1,0 +1,480 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>百姓贷</title>
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileColor" content="#0e90d2">
+  <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+  <!--
+  <link rel="canonical" href="http://www.example.com/">
+  -->
+
+  <link rel="stylesheet" href="assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/font/iconfont.css">
+  <link rel="stylesheet" type="text/css" href="https://cgtzfiles.b0.upaiyun.com/style3/css/newMember20160309.css?v=1467105333" />
+  <!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/echarts.min.js"></script>
+<script src="assets/js/popup.js"></script>
+<style>
+	body{ color:#ffffff;}
+	[class*=am-u-]{ padding-left: 10px;}
+	.am-navbar-default .am-navbar-nav{ background: #ffffff; border-top:#455576 solid 2px;}
+	.am-navbar-default .am-navbar-nav a{ color: #67728b;}
+	.am-divider-default{border-top: 1px solid #ebebeb;}
+
+  	.am-navbar-default .am-navbar-nav{ background: #ffffff; border-top:#455576 solid 2px;}
+	.am-navbar-default .am-navbar-nav a{ color: #67728b;}
+	.am-divider-default{border-top: 1px solid #ebebeb;}
+	.am-navbar .am-navbar-nav li em{ font-size: 1.8rem; display: inline-block; margin: 6px 0 3px; }
+	.am-navbar .am-navbar-nav li span{ font-size: 1.4rem;}
+	.am-navbar{ height: 56px; line-height: 56px;}
+	.investmentdetails .con_3 li, .find .con_3 li{ padding:0 3% 0 1%;}
+	.investmentdetails .con_3 li, .find .con_3 li{border-bottom: #ebebeb solid 1px;}
+	.investmentdetails .con_3, .find .con_3{ margin-top:0}
+	
+</style>
+</head>
+<body>
+<div class="banner">	
+     <div class="banner_n">
+     	    <div class="am-g am-padding-top-0">
+							  <div class="am-u-sm-2"><i class="i_0"></i></div>
+							  <div class="am-u-sm-8"><span>187****0651<i class="i_3" style="background-size:68%"></i></span></div>
+							  <div class="am-u-sm-2"><i class="i_22 am-fr"></i></div>
+          </div>
+     	    <h3 class="am-text-center am-margin-0 am-padding-0">￥25000</h3>
+     	    <p class="am-text-center  am-margin-0 am-padding-0"><b>总资金</b><i class="i_3" style="margin-top: -1px; background-size:68%" ></i></p>
+     </div>
+     <div class="div_1 am-padding-right-sm">
+     	    <p class="am-padding-left-sm am-fl" style="font-size: 1.5rem;">可用余额 ￥60.00</p><button type="button" class="am-btn am-fr am-btn-xs btn2 ">充值</button><button type="button" class="am-btn  am-fr am-btn-xs btn1">提现</button>
+     </div>
+</div>
+<div class="menu" style="z-index: -9999999999;">
+	  
+     <ul>
+     	   <li><i class="i_0"></i><p>体验金<span>1W</span>元</p></li>
+     	   <li><i class="i_1"></i><p>红包<span>1</span>个</p></li>
+     	   <li><i class="i_2"></i><p>积分<span>10</span>分</p></li>
+     	   <li class="li_3"><i class="i_3"></i><p>抽奖<span>0</span>次</p></li>
+     </ul>
+</div>
+  <hr data-am-widget="divider" style="" class="am-divider am-divider-default am-margin-bottom-0" />
+<div class="div_2 am-padding-top-sm am-margin-0" style="height: 120px;">
+	   <div class="am-g" style="padding: 0 0 0 3%;">
+				  
+				  <div class=" am-fl" style="width:60%;">
+<div id="shouyi" style="width: 100%;height: 110px;margin: 0;"></div>
+ <script type="text/javascript">
+         
+            	var dataMonth = new Array();
+            	var repayedTotal = new Array();
+            	var redMoney = new Array();
+            	
+            	
+            		
+	            		dataMonth.push("16/1");
+	            		repayedTotal.push("50");
+	            		redMoney.push("20");
+            		
+	            		dataMonth.push("16/2");
+	            		repayedTotal.push("30");
+	            		redMoney.push("10");
+            		
+	            		dataMonth.push("16/3");
+	            		repayedTotal.push("0.0");
+	            		redMoney.push("9");
+            		
+	            		dataMonth.push("16/4");
+	            		repayedTotal.push("8");
+	            		redMoney.push("50");
+            		
+            	
+            		
+	            		dataMonth.push("16/5");
+	            		repayedTotal.push("0.0");
+	            		redMoney.push("50");
+            		
+	            		dataMonth.push("16/6");
+	            		repayedTotal.push("0.0");
+	            		redMoney.push("50");
+          
+                  dataMonth.push("16/7");
+	            		repayedTotal.push("20000");
+	            		redMoney.push("4000");
+            	
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('shouyi'));
+                // 指定图表的配置项和数据
+                var option ={
+                    title: {
+//                        text: ' 投资收益表'
+                        // subtext: '纯属虚构'
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    	grid: {
+		left: '0',
+		right: '4%',
+		top:'7%',
+		height:'100',
+		containLabel: true
+	},
+                    legend: {
+                        // data:['最高气温','最低气温']
+                    },
+                    toolbox: {
+
+                        feature: {
+                       
+                        }
+                    },
+                    xAxis:  {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: dataMonth,
+                        axisLabel :{
+                           
+                             interval:1,
+                             rotate:0.1,
+                             margin:15,
+                             textStyle: {
+　　color: '#455576'
+　　}
+                            
+                        }
+                    },
+                    yAxis: {
+                        type: 'value',
+                        axisLabel: {
+                            formatter: '{value}元',
+                            
+                            textStyle: {
+　　color: '#455576'
+　　}
+                        },
+                        splitNumber:3
+                    },
+                    series: [
+                        {
+                            name:'利息',
+                            type:'line',
+                            data:repayedTotal,
+                            itemStyle:{
+                                normal:{
+                                	 color:'#edc54b',  
+                                	
+                                    lineStyle:{
+                                        color:'#edc54b'
+
+                                    }
+                                }
+                            },
+                            markPoint: {
+                                data: [
+                                    /* {type: 'max', name: '最大值'},
+                                     {type: 'min', name: '最小值'}*/
+                                ]
+                            },
+                            markLine: {
+                                data: [
+                                    // {type: 'average', name: '平均值'}
+                                ]
+                            }
+                        },
+                        {
+                            name:'红包',
+                            type:'line',
+                            data:redMoney,
+                            itemStyle:{
+                                normal:{
+                                	color:'#fa6760',  
+                                    lineStyle:{
+                                        color:'#fa6760'
+
+                                    }
+                                }
+                            },
+                            markPoint: {
+                                data: [
+                                    // {name: '周最低', value: -2, xAxis: 1, yAxis: -1.5}
+                                ]
+                            },
+                            markLine: {
+                                data: [
+                                    // {type: 'average', name: '平均值'},
+                                    /* [{
+                                     symbol: 'arrow',
+                                     label: {
+                                     normal: {
+                                     formatter: '最大值'
+                                     }
+                                     },
+                                     type: 'max',
+                                     name: '最大值'
+                                     }, {
+                                     symbol: 'circle',
+                                     x: '60%',
+                                     y: '50%'
+                                     }]*/
+                                ]
+                            }
+                        }
+                    ]
+                };
+
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+                
+            </script>
+          </div>
+   
+  
+
+
+				  	<!--<div id="main" style="width: 100%;height:120px; margin: 0;"></div>
+				  	 
+				  	   <script>
+				  	   var myChart = echarts.init(document.getElementById('main'));
+				  	   
+				  	var dom=myChart.getDom();
+
+option = {
+	 title: {
+text:'近六个月赚省金额',
+textStyle: {
+fontWeight: 'normal',
+color: '#455576',
+fontSize:'14',
+},
+textAlign:'left',
+        x:'left',
+        y:'top',
+
+},
+	tooltip : {
+		trigger: 'item',
+		axisPointer:{
+			lineStyle:{
+				type:'cross',
+				color:'rgba(0,0,0,0)'
+			}
+		},
+	    transitionDuration:0
+	},
+	
+
+	grid: {
+		left: '0',
+		right: '4%',
+		bottom:'1%',
+		height:'100',
+		containLabel: true
+	},
+	xAxis : [
+		{
+			type : 'category',
+			boundaryGap : false,
+			
+			axisLabel :{  
+    interval:'0' ,
+     rotate:0.1,
+     margin:15,
+     textStyle: {
+　　color: '#455576'
+　　}
+}  ,
+
+	    
+			data : ['16/1','16/2','16/3','16/4','16/5','16/6']
+		}
+	],
+	yAxis : [
+		{
+			type : 'value',
+			splitNumber:'3',
+			
+			axisLine:{
+                        lineStyle:{
+                            color:'#455576',
+                           
+                        }
+                    } 
+		},
+		
+		
+	],
+	series : [
+		{
+			name:'省赚金额',
+			 itemStyle:{
+            normal:{
+                color: "#dddddd" //图标颜色
+            }
+        },
+			type:'line',
+			symbolSize:5,
+			areaStyle: {normal: {
+				
+			}},
+			data:[120, 132, 101, 134, 90, 230]
+		}
+	]
+};
+
+
+myChart.on("showTip",showTip);
+function showTip(d)
+{
+	try{
+	    myChart.off("showTip");
+		myChart.off("hideTip");
+		option.series[0].markLine={
+			label:{
+				normal:{
+					show:false
+				}
+			},
+			lineStyle:{
+			    normal:{
+					color:'#edc54b',
+					type:'solid',
+					width:1
+				},
+				emphasis:{
+					color:'green',
+					type:'solid',
+					width:1
+				}
+			},
+			animation:false,
+			data: [
+				[
+					{
+						name: '两个坐标之间的标线',
+						
+						symbolSize:5,
+						coord: [d.dataIndexInside, 0],
+						
+					},
+					{
+						coord: [d.dataIndexInside, option.series[0].data[d.dataIndexInside]],
+						symbol:'circle'
+					}
+				]
+			]
+		};
+		option.series[0].animation=false;
+		myChart.dispose();
+		myChart = echarts.init(dom);
+		myChart.setOption(option);
+		myChart.on("hideTip",hideTip);
+	}catch(e){}
+}
+
+function hideTip(d)
+{
+	try{
+    	myChart.off("showTip");
+		myChart.off("hideTip");
+		option.series[0].markLine={
+			label:{
+				normal:{
+					show:false
+				}
+			},
+			lineStyle:{
+				normal:{
+					color:'#00ff00',
+					type:'solid',
+					width:1
+				}
+			},
+			animation:false,
+			data: []
+		};
+		
+		myChart.dispose();
+		myChart = echarts.init(dom);
+		myChart.setOption(option);
+		myChart.on("showTip",showTip);
+	}catch(e){}
+}			  	   
+				  
+
+        myChart.setOption(option);
+				  	   </script>
+				  	 -->
+				  	    
+  
+                  <div class=" am-padding-left-0 am-padding-right-0 am-fl" style=" width:40%; float: left; padding-top: 30px;"><p class="text_1  am-margin-0 am-text-center am-margin-bottom-0 am-padding-bottom-0">￥20.00</p><p class="text_2 am-text-center am-padding-0 am-margin-0" style="font-size: 1.4rem;"><em class="icon iconfont icon-qian"></em>赚省总金额</p></div>
+</div>
+</div>
+<hr data-am-widget="divider" style="" class="am-divider am-divider-default am-margin-bottom-0" />
+<div class="investmentdetails">
+<div class="con_3 am-padding-bottom-lg">
+		 <ul class="am-padding-0 am-margin-0">
+		 	<li><em class="am-fl icon iconfont icon-licai"></em>投资项目<span class="am-fr icon iconfont icon-iconfontjiantou5"></span></li>
+		 	<li><em class="am-fl icon iconfont icon-qianbi"></em>借款管理<span class="am-fr icon iconfont icon-iconfontjiantou5"></span></li>
+		 	<li><em class="am-fl icon iconfont icon-z-gift"></em>奖励活动<span class="am-fr icon iconfont icon-iconfontjiantou5"></span></li>
+		 </ul>
+	</div>
+    </div>
+<!--底部工具栏-->
+  <div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default "id="">
+      <ul class="am-navbar-nav am-cf am-avg-sm-4">
+          <li >
+            <a href="tel:123456789" class="text-yellow">
+                  <em class="icon iconfont icon-shouye"></em>
+                <span class="am-navbar-label">首页 </span>
+            </a>
+          </li>
+          <li>
+            <a href="###" class="">
+                  <em class="icon iconfont icon-licai1"></em>
+                <span class="am-navbar-label">理财</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="">
+                  <em class="icon iconfont icon-faxian"></em>
+                <span class="am-navbar-label">发现</span>
+            </a>
+          </li>
+           <li id="click_0">
+            <a href="#" class="" >
+                  <em class="icon iconfont icon-my"></em>
+                <span class="am-navbar-label">我的</span>
+            </a>
+          </li>
+      </ul>
+  </div>
+<div class="gybj" style="z-index: 100000;">
+	   <div class="class_0">
+	   	    <div class="divl am-fl">注册</div>
+	   	    <div class="divr am-fr">登录</div>
+	   </div>
+</div>
+
+</body>
+</html>

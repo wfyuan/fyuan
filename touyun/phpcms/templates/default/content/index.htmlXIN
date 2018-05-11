@@ -1,0 +1,394 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+	<meta name="keywords" content="{$SEO['keyword']}">
+	<meta name="description" content="{$SEO['description']}">
+    <link rel="icon" type="image/png" href="/touyun/statics/touyun/amaze/i/favicon.png">
+    <!--公用的样式和js-->
+    <link rel="stylesheet" href="/touyun/statics/touyun/amaze/css/amazeui.min.css">
+    <link rel="stylesheet" href="/touyun/statics/touyun/css/common/app.css">
+	<link href="/touyun/statics/touyun/css/video-js.css" rel="stylesheet">	
+    <script src="/touyun/statics/touyun/js/common/jquery-1.11.2.min.js"></script>
+    <script src="/touyun/statics/touyun/amaze/js/amazeui.min.js"></script>
+    <script src="/touyun/statics/touyun/js/common/app.js"></script>
+	 <script src="/touyun/statics/touyun/js/video.min.js"></script>	
+    <!--公用的over-->
+</head>
+<body>
+<!--首页专用的js，css-->
+<link rel="stylesheet" href="/touyun/statics/touyun/css/index/index.css">
+<script src="/touyun/statics/touyun/js/common/industry.js"></script>
+<script src="/touyun/statics/touyun/js/index/distpicker.data.js"></script>
+<script src="/touyun/statics/touyun/js/index/distpicker.js"></script>
+<script src="/touyun/statics/touyun/js/index/index.js"></script>
+<!-- <div class="index-nav">
+    <div class="container am-cf">
+        <ul class="nav am-cf am-fl">
+             {pc:content action="category" catid="0" num="5" siteid="$siteid" order="listorder ASC"}
+            {loop $data $r}
+           <li> <a href="{$r['url']}">{$r[catname]}</a></li>
+			{if $n==3} <li class="case1"><a href=""><img src="/touyun/statics/touyun/images/index/nav-logo.png"> </a></li>{/if}
+            {/loop}
+            {/pc}
+        </ul>
+        <div class="nav-focus am-fr">
+             <ul class="focus am-cf">
+                 <li><a class="case1" href=""></a> </li>
+                 <li><a class="case2" href=""></a> </li>
+                 <li><a class="case3" href=""></a> 021-61820853</li>
+             </ul>
+        </div>
+    </div>
+</div> -->
+{template "content","tyheader"}
+<!--头部完，banner部分开始-->
+<div class="banner-container ">
+    <div class="banner-container-center">
+        <div class="container">
+            <div class="lonin-box">
+                 <form class="login-form" action="https://s784584368.t.eloqua.com/e/f2"  mothod="post">
+                     <div class="form-group">
+                         <span>姓名</span>
+                         <input type="text" name="firstName" placeholder="" value="">
+                     </div>
+                     <div class="form-group">
+                         <span>公司</span>
+                         <input type="text" name="company" placeholder="" value="">
+                     </div>
+                     <div class="form-group">
+                         <span>职位</span>
+                         <input type="text" name="jobRole1" placeholder="" value="">
+                     </div>
+                     <div class="form-group">
+                         <span>手机</span>
+                         <input type="text" name="mobilePhone" placeholder="" value="">
+                     </div>
+                     <div class="form-group">
+                         <span>邮箱</span>
+                         <input type="text" name="emailAddress" placeholder="" value="">
+                     </div>
+                  <div class="form-group">
+                         <span>行业</span>
+                         <select class="hangye" id="industryBig">
+                             <option>11111</option>
+                             <option>11111</option>
+                             <option>11111</option>
+                         </select>
+                         <select class="hangye" id="industrySmall">
+                             <option>2</option>
+                             <option>2</option>
+                             <option>2</option>
+                         </select>
+                     </div>
+                     <div class="form-group">
+                         <span>区域</span>
+                         <div id="distpicker5">
+                             <select class="form-control" id="province10"></select>
+                             <select class="form-control" id="city10"></select>
+                             <select class="form-control" id="district10"></select>
+                         </div>
+                     </div>
+
+
+
+
+                     <div class="submit-btn">
+                         <input type="button" class="am-btn am-g am-radius" value="免费注册">
+                     </div>
+
+                 </form>
+             </div>
+            <div class="thedata">
+                <ul class="am-avg-sm-3 am-thumbnails">
+                    <li>
+                        <p>已赋</p>
+                        <h2 id="rollNum1">4331</h2>
+                        <p>二维码</p>
+                    </li>
+                    <li>
+                        <p>已发</p>
+                        <h2 id="rollNum2">99862</h2>
+                        <p>红包金额</p>
+                    </li>
+                    <li>
+                        <p>已服务</p>
+                        <h2 id="rollNum3">3451</h2>
+                        <p>客户</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-am-widget="slider" class="am-slider am-slider-a1"
+     data-am-slider='{"directionNav":false,animation: "fade", }'>
+    <ul class="am-slides">
+	
+		{pc:content  action="position" posid="1" order="listorder DESC" num="4"}
+
+ {loop $data $key $val}
+
+ <li> <img src="{$val['thumb']}"></li>
+ {/loop}
+
+ {/pc}
+	
+       <!--  <li>
+            <img src="/touyun/statics/touyun/images/index/banner1.jpg">
+        </li>
+        <li>
+            <img src="/touyun/statics/touyun/images/index/banner2.jpg">
+        </li> -->
+    </ul>
+</div>
+
+<!--banner完 ， 一物一码开始-->
+<div class="alone-code">
+    <div class="alone-code-title"></div>
+    <div class="container">
+        <h2 class="am-center">
+            一物一码解决方案
+        </h2>
+        <ul class="am-avg-sm-3 am-thumbnails code-list">
+			{pc:content  action="position" posid="18" order="listorder aSC" num="9"}
+
+ {loop $data $key $val}
+
+ <li> 
+ <div class="img "  style="background: url({$val['thumb']}) no-repeat top center;"></div>
+                <h3>{$val['title']}</h3>
+                <p>{$val['description']}	</p>
+ 
+ </li>
+ {/loop}
+
+ {/pc}
+	
+		
+        <!--    <li>
+                <div class="img "  style="background: url() no-repeat top center;"></div>
+                <h3>扫码营销</h3>
+                <p>简介刷卡机多少分，第三方见红看多少分炬华科技，淡饭黄齑。</p>
+            </li>
+             <li>
+                <div class="img case2"></div>
+                <h3>基础溯源</h3>
+                <p>简介刷卡机多少分，第三方见红看多少分炬华科技，淡饭黄齑。</p>
+            </li>
+            <li>
+                <div class="img case3"></div>
+                <h3>简单防蹿</h3>
+                <p>简介刷卡机多少分，第三方见红看多少分炬华科技，淡饭黄齑。</p>
+            </li>
+            <li>
+                <div class="img case4"></div>
+                <h3>分销管理</h3>
+                <p>简介刷卡机多少分，第三方见红看多少分炬华科技，淡饭黄齑。</p>
+            </li>
+            <li>
+                <div class="img case5"></div>
+                <h3>基础防伪</h3>
+                <p>简介刷卡机多少分，第三方见红看多少分炬华科技，淡饭黄齑。</p>
+            </li>
+            <li>
+                <div class="img case6"></div>
+                <h3>码管理</h3>
+                <p>简介刷卡机多少分，第三方见红看多少分炬华科技，淡饭黄齑。</p>
+            </li>
+            <li>
+                <div class="img case7"></div>
+                <h3>数据洞察</h3>
+                <p>简介刷卡机多少分，第三方见红看多少分炬华科技，淡饭黄齑。</p>
+            </li>
+            <li>
+                <div class="img case8"></div>
+                <h3>生产供应</h3>
+                <p>简介刷卡机多少分，第三方见红看多少分炬华科技，淡饭黄齑。</p>
+            </li>
+            <li>
+                <div class="img case9"></div>
+                <h3>卡券商店</h3>
+                <p>简介刷卡机多少分，第三方见红看多少分炬华科技，淡饭黄齑。</p>
+            </li> -->
+        </ul>
+    </div>
+</div>
+
+<!--视频介绍部分-->
+<div class="video-introduce">
+    <div class="video">
+        <!--  <img src="/touyun/statics/touyun/images/index/vedioimg.jpg"> -->
+		 <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="1001" height="560"
+		  poster="/touyun/statics/touyun/images/index/vedioimg.jpg" data-setup="{}">
+			<source src="/touyun/statics/touyun/mp4/tykj.mp4" type="video/mp4">
+			
+		  </video>
+    </div>
+</div>
+
+<!--注册按钮-->
+<div class="register-box">
+     <div class="container am-text-center">
+         <p>马上注册，免费体验个性化营销工具！</p>
+         <a href="JavaScript:;" onclick="return backTop();">马上注册 ></a>
+     </div>
+</div>
+
+<!--客户服务-->
+<div class="customer-service">
+    <div class="customer-container">
+        <h2 class="am-center">
+            服务客户
+        </h2>
+
+        <ul class="customer-list am-cf">
+            <li><img src="/touyun/statics/touyun/images/index/customer1.png"> </li>
+            <li><img src="/touyun/statics/touyun/images/index/customer2.png"> </li>
+            <li><img src="/touyun/statics/touyun/images/index/customer3.png"> </li>
+            <li><img src="/touyun/statics/touyun/images/index/customer4.png"> </li>
+            <li><img src="/touyun/statics/touyun/images/index/customer5.png"> </li>
+            <li><img src="/touyun/statics/touyun/images/index/customer6.png"> </li>
+            <li><img src="/touyun/statics/touyun/images/index/customer7.png"> </li>
+            <li><img src="/touyun/statics/touyun/images/index/customer8.png"> </li>
+            <li><img src="/touyun/statics/touyun/images/index/customer9.png"> </li>
+            <li><img src="/touyun/statics/touyun/images/index/customer10.png"> </li>
+            <li><img src="/touyun/statics/touyun/images/index/customer11.png"> </li>
+            <li><img src="/touyun/statics/touyun/images/index/customer12.png"> </li>
+        </ul>
+    </div>
+</div>
+
+<div class="newest-dynamic">
+    <div class="dynamic-center">
+        <h2 class="am-center">最新动态</h2>
+        <div class="dynamic-warp am-cf">
+            <ul data-am-widget="gallery" class="img am-gallery am-avg-sm-2 am-gallery-default am-fl" data-am-gallery="{ pureview: true }" >
+              {pc:content  action="lists"  catid="13"  thumb=1 order="id DESC" num="2"}
+
+ {loop $data $key $val}
+
+  <li style="padding-right: 10px;">
+                    <div class="am-gallery-item">
+                        <img src="{$val['thumb']}"/>
+                        <h3 class="am-gallery-title"><a href="{$val['url']}">{$val['title']}</a></h3>
+                    </div>
+                </li>
+ 
+ 
+ 
+ {/loop}
+
+ {/pc}
+
+				
+			 <!--  <li style="padding-right: 10px;">
+                    <div class="am-gallery-item">
+                        <img src="images/index/new1.jpg"/>
+                        <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                    </div>
+                </li>
+                <li style="padding-left: 10px;">
+                    <div class="am-gallery-item">
+                        <img src="images/index/new1.jpg"/>
+                        <h3 class="am-gallery-title">某天 也许会相遇 相遇在这个好地方</h3>
+                    </div>
+                </li> -->
+            </ul>
+            <div class="am-fr news-list">
+                <ul class="am-gallery">
+				
+				 {pc:content  action="lists"  catid=13 order="id DESC" num="4"}
+
+ {loop $data $key $val}
+
+  <li>
+                        <div class="time">
+                           {date('Y-m-d',$val[inputtime])}
+                        </div>
+                        <div class="text"><a href="{$val['url']}" tagert="_blank">{$val['title']}</a></div>
+                    </li>
+ 
+ 
+ 
+ {/loop}
+
+ {/pc}
+                    <!-- <li>
+                        <div class="time">
+                            2018.01.03
+                        </div>
+                        <div class="text">引领全球【一物一码】食用香精香料创新营销第二行布拉见附件附件</div>
+                    </li>
+                    <li>
+                        <div class="time">
+                            2018.01.03
+                        </div>
+                        <div class="text">引领全球【一物一码】食用香精香料创新营销第二行布拉见附件附件</div>
+                    </li>
+                    <li>
+                        <div class="time">
+                            2018.01.03
+                        </div>
+                        <div class="text">引领全球【一物一码】食用香精香料创新营销第二行布拉见附件附件</div>
+                    </li>
+                    <li>
+                        <div class="time">
+                            2018.01.03
+                        </div>
+                        <div class="text">引领全球【一物一码】食用香精香料创新营销第二行布拉见附件附件</div>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--注册按钮-->
+<div class="register-box">
+    <div class="container am-text-center">
+        <p>马上注册，免费体验个性化营销工具！</p>
+         <a href="JavaScript:;" onclick="return backTop();">马上注册 ></a>
+    </div>
+</div>
+
+<!--右边的操作部分-->
+<div class="aside-opation" id="asidePart">
+    <ul class="asideList">
+        <li class="case1">
+            <p><a href="https://kfty.qiyukf.com/client?k=7f1fa085e2521a2e11719b1db362f71a&wp=1&gid=410038&robotShuntSwitch=0">在线<br>客服</a></p>
+        </li>
+        <li class="case2">
+            <p>电话<br>热线</p>
+            <div class="mobileCont">
+                <div class="close">
+                    <span class="am-icon-remove"></span>
+                </div>
+                <h4>联系我们</h4>
+                <h5><span class="am-icon-phone"></span> 021-61820853</h5>
+            </div>
+        </li>
+        <li class="case3">
+            <p>扫码<br>关注</p>
+            <div class="mobileCont">
+                <div class="close">
+                    <span class="am-icon-remove"></span>
+                </div>
+                <img src="/touyun/statics/touyun/images/index/wechatcode.png">
+                <h3>透云官方微信</h3>
+            </div>
+        </li>
+        <li class="case4">
+
+        </li>
+    </ul>
+</div>
+
+{template "content","tyend"}
+
+</body>
+</html>

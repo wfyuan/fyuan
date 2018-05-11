@@ -1,0 +1,50 @@
+<header data-am-widget="header"  class="am-header am-header-default">
+    <div class="am-header-left am-header-nav">
+        <a href="javascript:;" target="_self" class="" onclick="javascript:history.back(-1);">
+            <i class="am-header-icon am-icon-chevron-left"></i>
+        </a>
+    </div>
+    <h1 class="am-header-title">
+        <a href="#title-link" class="">
+            查询结果
+        </a>
+    </h1>
+</header>
+
+
+<if condition="$result.error_code neq 0">
+    {$result.reason}<else/>
+<h1 style="padding: 20px 20px 0; margin: 0">{$result.result.zi}</h1>
+<article data-am-widget="paragraph"  class="am-paragraph am-paragraph-default" data-am-paragraph="{ tableScrollable: true, pureview: true }">
+    <p>拼音：{$result.result.pinyin}<br>
+        五笔：{$result.result.wubi}<br>
+        笔画：{$result.result.bihua}
+    </p>
+</article>
+<div class="am-panel am-panel-default">
+    <div class="am-panel-hd">简介</div>
+    <div class="am-panel-bd am-text-sm">
+        <volist name="result.result.jijie" id="vo">
+
+            <if condition="$vo eq ''">
+                <br>
+                <else/>
+                {$vo}
+            </if>
+        </volist>
+    </div>
+</div>
+
+<article data-am-widget="paragraph"  class="am-paragraph am-paragraph-default" data-am-paragraph="{ tableScrollable: true, pureview: true }">
+    <p>
+    <volist name="result.result.xiangjie" id="vo">
+
+        <if condition="$vo eq ''">
+
+            <else/>
+            {$vo}<br>
+        </if>
+    </volist>
+    </p>
+</article>
+</if>

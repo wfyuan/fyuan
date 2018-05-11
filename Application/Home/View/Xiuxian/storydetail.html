@@ -1,0 +1,47 @@
+<include file="./Application/Home/View/Xiuxian/commontitle.html" />
+<article data-am-widget="paragraph" class="am-paragraph am-paragraph-default"
+         data-am-paragraph="{ tableScrollable: true, pureview: true }">
+    {$detail.text}
+</article>
+<style>
+    .am-paragraph p{ text-indent: 2em;}
+</style>
+<if condition="$detail['allPages'] gt 1">
+<ul data-am-widget="pagination" class="am-pagination am-pagination-select">
+    <li class="am-pagination-prev ">
+        <if condition="$detail['currentPage'] neq 1">
+            <a href="/home/xiuxian/storydetail/{$params.id}/p/{$detail['currentPage']-1}" class="">上一节</a>
+            <else/>
+            <a href="javascript:void(0);" class="">上一节</a>
+        </if>
+    </li>
+    <li class="am-pagination-select selected">
+        <select id="fastPage">
+            <volist name="detail['fastPage']" id="v" key="k">
+                <option value="/home/xiuxian/storydetail/{$params.id}/p/{$v}" <if condition="$v eq $detail['currentPage']">selected</if> >{$v}/{$detail['allPages']}</option>
+            </volist>
+        </select>
+    </li>
+    <li class="am-pagination-next ">
+        <if condition="$detail['currentPage'] ELT $detail['allPages']">
+        <a href="/home/xiuxian/storydetail/{$params.id}/p/{$detail['currentPage']+1}" class="">下一节</a>
+        <else/>
+            <a href="javascript:;" class="">下一节</a>
+        </if>
+    </li>
+</ul>
+</if>
+<style>
+    .am-pagination li{border: 1px solid #ddd; background-color: #fff;}
+    .am-pagination>li>a{ margin: 0; background: #fff;    color: #0e90d2;}
+    .am-pagination-select .am-pagination-select{ width: 72px; height: 38px;}
+    .am-pagination-select .am-pagination-select select{ background: #fff; outline: 0; padding-left: 10px; text-align: center;}
+</style>
+<script>
+    $(function(){
+        $('#fastPage').change(function(){
+            var goPage = $(this).val();
+            window.location.href = goPage;
+        });
+    })
+</script>

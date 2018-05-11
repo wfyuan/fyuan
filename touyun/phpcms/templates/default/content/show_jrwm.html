@@ -1,0 +1,198 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+    <link rel="icon" type="image/png" href="/touyun/statics/touyun/assets/i/favicon.png">
+    <!--公用的样式和js-->
+    <link rel="stylesheet" href="/touyun/statics/touyun/amaze/css/amazeui.min.css">
+    <link rel="stylesheet" href="/touyun/statics/touyun/css/common/app.css">
+    <script src="/touyun/statics/touyun/js/common/jquery-1.11.2.min.js"></script>
+    <script src="/touyun/statics/touyun/amaze/js/amazeui.min.js"></script>
+    <script src="/touyun/statics/touyun/js/common/app.js"></script>
+    <!--公用的over-->
+</head>
+<body>
+<!--首页专用的js，css-->
+<link rel="stylesheet" href="/touyun/statics/touyun/css/index/index.css">
+<!--<div class="index-nav">
+    <div class="container am-cf">
+        <ul class="nav am-cf am-fl">
+             <li><a href="">关于透云</a></li>
+             <li><a href="">一物一码</a></li>
+             <li><a href="">众店宝</a></li>
+             <li class="case1"><a href=""><img src="/touyun/statics/touyun/images/index/nav-logo.png"> </a></li>
+             <li><a href="">案例中心</a></li>
+             <li><a href="">行业视界</a></li>
+        </ul>
+        <div class="nav-focus am-fr">
+             <ul class="focus am-cf">
+                 <li><a class="case1" href=""></a> </li>
+                 <li><a class="case2" href=""></a> </li>
+                 <li><a class="case3" href=""></a> 021-61820853</li>
+             </ul>
+        </div>
+    </div>
+</div> -->
+{template "content","tyheader"}
+
+<!--以下为职位详情专有页面代码 begin-->
+<!--做的时候公用代码也要拿过来-->
+<style>
+    .zhiwei-header{ height: 170px; background-color: #f4f4f4;}
+.zhiwei-center{ width: 750px; margin: 0 auto;}
+.zhiwei-center .am-btn{ padding: 0.8rem 2.5rem; border-radius: 3px; background-color: #ffb619; color: #fff; border: 0; margin-top: 60px;}
+    .joinContainer{ background-color: #fff;}
+
+    .title{ padding-top: 45px;}
+    .title h1{ font-size: 32px; margin: 0; font-weight: bold;}
+    .title p{ font-size: 14px; color: #333; margin: 0;}
+    .title p span{ color: #ffb619;}
+
+    .zhiwei{ padding:10px 0 60px; }
+    .zhiwei h2{ font-size: 24px; color: #333; font-weight: bold; margin: 0; margin-top: 40px; }
+    .zhiwei h3{ font-size: 18px; color: #666; margin: 0; margin-top: 15px; }
+    .zhiwei p{ font-size: 14px; color: #999; margin: 0; margin-top: 10px; line-height: 24px; }
+
+</style>
+<!--头部完-->
+<div class="anliBanner">
+    <img style="width: 100%;" class="am-img-responsive" src="/touyun/statics/touyun/images/anli/yBanner.jpg">
+</div>
+
+<div class="zhiwei-header">
+    <div class="zhiwei-center">
+        <div class="am-u-sm-9 am-padding-left-0">
+            <div class="title">
+            <h1>{$title}</h1>
+            <p><span>{$money}</span>/{$experience}工作经验/{$address}/{$xueli}/{$xingzhi}</p>
+            </div>
+        </div>
+        <div class="am-u-sm-3">
+            <a href="mailto:hr@sao.so" class="am-btn am-btn-default">投简历</a>
+        </div>
+    </div>
+</div>
+<div class="joinContainer">
+    <div class="zhiwei-center">
+        <div class="zhiwei">
+        <h2>主要工作职责：</h2>
+		{$mainjob}
+        <!--<h3>一、合同、公函和其他法律文件</h3>
+        <p>1、  负责公司合同预审核工作；<br/>
+        2、  起草、审核、修改公司各类法律文件（包括但不限于合同、协议、公函等文本）<br/>
+        3、  参与公司重要商务合同的讨论和谈判工作，提供法律支持。<br/>
+        4、  建立公司法律档案管理体系，将公司涉及法务管理方面的制度、合同、协议等所有书面资料的归档</p>
+        <h3>二、法务管理制度的建立和维护</h3>
+        <p>1、建立并完善公司法务工作的管理制度及工作流程；<br/>
+        2、促进公司各部门依据法务管理制度及流程工作，依法经营，预防和控制公司经营中的风险。</p>
+        <h3>三、法律咨询和研究</h3>
+        <p>1、为管理层、各职能部门提供必要的法律咨询和指导；<br/>
+        2、对公司业务涉及现有的法律法规的收集整理、分析研究对公司经营的影响，同时包括新颁布的法律法规的研究保障公司经营活动的合法性，预防和控制公司经营中的风险。</p>
+            <h3>四、纠纷处理</h3>
+        <p> 1、公司涉劳资纠纷、经济诉讼及其他法律纠纷内部材料整理和协调工作；<br/>
+        2、协助外部律师进行案件证据收集、诉讼材料准备和案情分析；<br/>
+                <h3>五、参与公司其他与法律有关的日常事务</h3>-->
+
+        <h2>岗位要求：</h2>
+		{$jobrequest}
+        <!--<p>1、  全日制本科及以上学历，持有执业律师资格证。<br/>
+        2、  8年以上律所或企业法务经验，有公司上市相关经验或上市公司法务工作经验者优先。<br/>
+        3、  对电子商务、互联网行业的风险控制体系有一定的了解，熟悉互联网、软件开发、电子商务、数据安全行业相关法律法规，具有独立分析、决策、解决及应变法律问题的能力；<br/>
+        4、具备良好的组织协调和人际沟通能力，团队合作意识强，为人诚实，具有敬业精神。</p>-->
+        </div>
+    </div>
+</div>
+
+
+<!--职位详情专有代码结束 end-->
+
+
+
+<!--右边的操作部分-->
+<div class="aside-opation" id="asidePart">
+    <ul class="asideList">
+        <li class="case1">
+            <p><a href="">在线<br>客服</a></p>
+        </li>
+        <li class="case2">
+            <p>电话<br>热线</p>
+            <div class="mobileCont">
+                <div class="close">
+                    <span class="am-icon-remove"></span>
+                </div>
+                <h4>联系我们</h4>
+                <h5><span class="am-icon-phone"></span> 021-61820853</h5>
+            </div>
+        </li>
+        <li class="case3">
+            <p>扫码<br>关注</p>
+            <div class="mobileCont">
+                <div class="close">
+                    <span class="am-icon-remove"></span>
+                </div>
+                <img src="/touyun/statics/touyun/images/index/wechatcode.png">
+                <h3>透云官方微信</h3>
+            </div>
+        </li>
+        <li class="case4">
+
+        </li>
+    </ul>
+</div>
+
+<!--<div class="footer">
+    <div class="container am-cf">
+        <div class="mapsite am-fl am-cf">
+            <dl>
+                <dt>公司简介</dt>
+                <dd><a href="">新闻动态</a></dd>
+                <dd><a href="">愿景及使命</a></dd>
+                <dd><a href="">大事记</a></dd>
+                <dd><a href="">专利及荣誉</a></dd>
+                <dd><a href="">联系我们</a></dd>
+                <dd><a href="">加入我们</a></dd>
+            </dl>
+            <dl>
+                <dt>一物一码</dt>
+                <dd><a href="">扫码营销</a></dd>
+                <dd><a href="">简单溯源</a></dd>
+                <dd><a href="">简单防窜</a></dd>
+                <dd><a href="">分销管理</a></dd>
+                <dd><a href="">简单防伪</a></dd>
+            </dl>
+            <dl>
+                <dt>众店宝</dt>
+                <dd><a href="">产品简介</a></dd>
+                <dd><a href="">招商加盟</a></dd>
+            </dl>
+            <dl>
+                <dt>案例中心</dt>
+                <dd><a href="">成功案例</a></dd>
+                <dd><a href="">客户赞誉</a></dd>
+            </dl>
+            <dl>
+                <dt>行业视界</dt>
+                <dd><a href="">市场动态</a></dd>
+                <dd><a href="">白皮书</a></dd>
+            </dl>
+        </div>
+        <div class="touyuncode am-fr">
+            <p>透云官方微信</p>
+            <img src="images/index/wechatcode.png">
+        </div>
+        <div style="clear: both;"></div>
+        <div class="footer-bottom">
+            <p>© 2014-2017 SAO.SO 上海透云物联网科技有限公司 版权所有 | 沪ICP12016045号-4 网站地图<br>
+                沪公网安备 31010602001034号</p>
+        </div>
+    </div>
+</div>-->
+
+{template "content","tyend"}
+</body>
+</html>

@@ -1,0 +1,7 @@
+body{ background: #f8f8f8;}
+
+.indexNav{ padding: 5px 0; }
+.indexNav a{ height: 100%;}
+.indexNav a [class*=am-icon]:before{font-size: 2.8em; }
+.indexNav a [class*=am-icon]{ margin: 5px auto 0;width: 2.8em; height: 2.8em; display: block; line-height: 2.8em;}
+.indexNav a { color: #666; }

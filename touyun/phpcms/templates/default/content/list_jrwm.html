@@ -1,0 +1,130 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="{$SEO['description']}">
+    <meta name="keywords" content="{$SEO['keyword']}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+    <link rel="icon" type="image/png" href="/touyun/statics/touyun/amaze/i/favicon.png">
+    <!--公用的样式和js-->
+    <link rel="stylesheet" href="/touyun/statics/touyun/amaze/css/amazeui.min.css">
+    <link rel="stylesheet" href="/touyun/statics/touyun/css/common/app.css">
+    <script src="/touyun/statics/touyun/js/common/jquery-1.11.2.min.js"></script>
+    <script src="/touyun/statics/touyun/amaze/js/amazeui.min.js"></script>
+    <script src="/touyun/statics/touyun/js/common/app.js"></script>
+    <!--公用的over-->
+</head>
+<body>
+<!--首页专用的js，css-->
+<link rel="stylesheet" href="/touyun/statics/touyun/css/index/index.css">
+<!-- <div class="index-nav">
+    <div class="container am-cf">
+        <ul class="nav am-cf am-fl">
+             <li><a href="">关于透云</a></li>
+             <li><a href="">一物一码</a></li>
+             <li><a href="">众店宝</a></li>
+             <li class="case1"><a href=""><img src="images/index/nav-logo.png"> </a></li>
+             <li><a href="">案例中心</a></li>
+             <li><a href="">行业视界</a></li>
+        </ul>
+        <div class="nav-focus am-fr">
+             <ul class="focus am-cf">
+                 <li><a class="case1" href=""></a> </li>
+                 <li><a class="case2" href=""></a> </li>
+                 <li><a class="case3" href=""></a> 021-61820853</li>
+             </ul>
+        </div>
+    </div>
+</div> -->
+{template "content","tyheader"}
+<style>
+.joinContainer{ width: 750px; margin: 0 auto; background-color: #fff; padding: 40px; color: #666;}
+    .joinContainer a{ color: #333;}
+.joinContainer th{ font-size: 18px; font-weight: normal; color: #ffb618;}
+</style>
+<!--头部完-->
+<div class="anliBanner">
+    <img style="width: 100%;" class="am-img-responsive" src="/touyun/statics/touyun/images/anli/yBanner.jpg">
+</div>
+
+<div style="background-color: #f4f4f4; padding: 40px 0">
+    <div class="joinContainer">
+        <table class="am-table am-table-hover">
+            <thead>
+            <tr>
+                <th style="color:#0D5899">职位名称</th>
+                <th style="color:#0D5899">职位类别</th>
+                <th class="am-text-right" style="color:#0D5899">职位地点</th>
+            </tr>
+            </thead>
+            <tbody>
+			 {pc:content  action="lists"  catid=14 order="inputtime DESC" num="10" page="$page" moreinfo=1}
+
+ {loop $data $key $val}
+            <tr>
+                <td><a href="{$val['url']}"> {$val['title']}</a></td>
+                <td>{$val['zwlb']}</td>
+                <td class="am-text-right">{$val['address']}</td>
+            </tr>
+			 
+ {/loop}
+
+
+          
+            </tbody>
+        </table>
+
+        <div class="pager" style="margin-top: 30px;">
+            <p>
+			{$pages}
+               <!--  <a href="">上一页</a>
+                <a class="active" href="">1</a>
+                <a href="">2</a>
+                <a href="">3</a>
+                <a href="">4</a>
+                <a href="">4</a>
+                <a href="">下一页</a> -->
+            </p>
+        </div>
+ {/pc}
+    </div>
+</div>
+
+<!--右边的操作部分-->
+<div class="aside-opation" id="asidePart">
+    <ul class="asideList">
+        <li class="case1">
+            <p><a href="">在线<br>客服</a></p>
+        </li>
+        <li class="case2">
+            <p>电话<br>热线</p>
+            <div class="mobileCont">
+                <div class="close">
+                    <span class="am-icon-remove"></span>
+                </div>
+                <h4>联系我们</h4>
+                <h5><span class="am-icon-phone"></span> 021-61820853</h5>
+            </div>
+        </li>
+        <li class="case3">
+            <p>扫码<br>关注</p>
+            <div class="mobileCont">
+                <div class="close">
+                    <span class="am-icon-remove"></span>
+                </div>
+                <img src="/touyun/statics/touyun/images/index/wechatcode.png">
+                <h3>透云官方微信</h3>
+            </div>
+        </li>
+        <li class="case4">
+
+        </li>
+    </ul>
+</div>
+
+{template "content","tyend"}
+
+</body>
+</html>

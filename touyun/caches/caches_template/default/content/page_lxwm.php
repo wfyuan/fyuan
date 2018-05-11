@@ -1,0 +1,134 @@
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="<?php echo $SEO['description'];?>">
+    <meta name="keywords" content="<?php echo $SEO['keyword'];?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?php if(isset($SEO['title']) && !empty($SEO['title'])) { ?><?php echo $SEO['title'];?><?php } ?><?php echo $SEO['site_title'];?></title>
+    <link rel="icon" type="image/png" href="/touyun/statics/touyun/amaze/i/favicon.png">
+    <!--公用的样式和js-->
+    <link rel="stylesheet" href="/touyun/statics/touyun/amaze/css/amazeui.min.css">
+    <link rel="stylesheet" href="/touyun/statics/touyun/css/common/app.css">
+    <script src="/touyun/statics/touyun/js/common/jquery-1.11.2.min.js"></script>
+    <script src="/touyun/statics/touyun/amaze/js/amazeui.min.js"></script>
+    <script src="/touyun/statics/touyun/js/common/app.js"></script>
+    <!--公用的over-->
+</head>
+<body>
+<!--首页专用的js，css-->
+<link rel="stylesheet" href="/touyun/statics/touyun/css/index/index.css">
+<?php include template("content","tyheader"); ?>
+
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=1.4&ak=您的密钥&s=1"></script>
+<script type="text/javascript" src="https://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+<link rel="stylesheet" href="https://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+<style>
+.joinContainer{ width: 800px; margin: 0 auto;}
+.joinContainer h5{ font-size: 24px; padding-top: 70px;}
+.joinContainer .img1{ width: 370px; height: 320px;}
+.joinContainer .img2{ width: 370px; height: 135px;}
+.joinContainer span{ color: #ffb618;}
+</style>
+<!--头部完-->
+<div class="anliBanner">
+    <img style="width: 100%;" class="am-img-responsive" src="/touyun/statics/touyun/images/about/cuBanner.jpg">
+</div>
+
+<div style="background-color: #fff; padding: 60px 0 100px;">
+    <div class="joinContainer am-cf">
+        <div class="text am-fl">
+            <h5><span style="color:#0D5899">联系我们</span></h5>
+            <!-- <p>联系人：丁晨<br>
+                电话： <span>021-61820853</span><br>
+                邮箱：marketing@sao.so<br>
+                上海总部地址：上海市静安区光复路581号</p> -->
+				<?php echo $content;?>
+        </div>
+        <div class="img1 am-fr " id="allmap1">
+            <!--<img src="images/about/cuImg1.jpg">-->
+        </div>
+    </div>
+
+    <div class="joinContainer am-cf am-padding-top-lg">
+        <div class="text am-fl">
+            <p style="padding-top: 40px;">透云科技北京分公司：<br>
+                地址：北京市东城区东花市北里东区三吉利商厦3层</p>
+        </div>
+        <div class="img2 am-fr " id="allmap2">
+            <!--<img src="images/about/cuImg2.jpg">-->
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $(function(){
+
+        var navigationControl = new BMap.NavigationControl({
+            anchor: BMAP_ANCHOR_TOP_LEFT,
+            type: BMAP_NAVIGATION_CONTROL_LARGE,
+            enableGeolocation: true
+        });
+
+        var map = new BMap.Map('allmap1');
+        var poi = new BMap.Point(121.468544,31.247749)
+        map.centerAndZoom(poi, 16);
+        map.enableScrollWheelZoom();
+        map.addControl(navigationControl);
+
+        var map2 = new BMap.Map('allmap2');
+        var poi2 = new BMap.Point(116.443556,39.905387)
+        map2.centerAndZoom(poi2, 16);
+        map2.enableScrollWheelZoom();
+        map2.addControl(navigationControl);
+
+
+        var marker = new BMap.Marker(poi); //创建marker对象
+        map.addOverlay(marker);
+
+        var marker2 = new BMap.Marker(poi2); //创建marker对象
+        map2.addOverlay(marker2);
+
+    })
+</script>
+
+
+
+<!--右边的操作部分-->
+<div class="aside-opation" id="asidePart">
+    <ul class="asideList">
+        <li class="case1">
+            <p><a href="">在线<br>客服</a></p>
+        </li>
+        <li class="case2">
+            <p>电话<br>热线</p>
+            <div class="mobileCont">
+                <div class="close">
+                    <span class="am-icon-remove"></span>
+                </div>
+                <h4>联系我们</h4>
+                <h5><span class="am-icon-phone"></span> 021-61820853</h5>
+            </div>
+        </li>
+        <li class="case3">
+            <p>扫码<br>关注</p>
+            <div class="mobileCont">
+                <div class="close">
+                    <span class="am-icon-remove"></span>
+                </div>
+                <img src="/touyun/statics/touyun/images/index/wechatcode.png">
+                <h3>透云官方微信</h3>
+            </div>
+        </li>
+        <li class="case4">
+
+        </li>
+    </ul>
+</div>
+
+<?php include template("content","tyend"); ?>
+
+</body>
+</html>

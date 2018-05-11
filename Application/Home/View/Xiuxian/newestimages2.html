@@ -1,0 +1,32 @@
+<include file="./Application/Home/View/Xiuxian/title.html" />
+<ul data-am-widget="gallery" class="am-gallery am-avg-sm-1 am-avg-lg-2 am-gallery-default" data-am-gallery="{ pureview: true }" >
+    <volist name="list.contentlist" id="v">
+    <li>
+        <div class="am-gallery-item">
+            <a href="{$v.url}" class="">
+                <img src="{$v.img}"  alt="{$v.title}"/>
+                <h3 class="am-gallery-title">{$v.title}</h3>
+                <div class="am-gallery-desc">{$v.ct}</div>
+            </a>
+        </div>
+    </li>
+    </volist>
+</ul>
+
+<ul class="am-pagination am-pagination-centered">
+    <if condition="$list['currentPage'] neq 1">
+        <li><a href="{:U('xiuxian/newestimages',array('p'=>$list['currentPage']-1))}">&laquo;</a></li>
+        <if condition="$list['currentPage'] neq 2">
+            <li><a href="{:U('xiuxian/newestimages',array('p'=>$list['currentPage']-2))}">{$list['currentPage']-2}</a></li>
+        </if>
+        <li><a href="{:U('xiuxian/newestimages',array('p'=>$list['currentPage']-1))}">{$list['currentPage']-1}</a></li>
+    </if>
+    <li  class="am-active"><a href="javascript:void(0);">{$list.currentPage}</a></li>
+    <if condition="$list['currentPage'] LT $list['allPages']">
+        <li><a href="{:U('xiuxian/newestimages',array('p'=>$list['currentPage']+1))}">{$list['currentPage']+1}</a></li>
+        <if condition="$list['currentPage'] LT $list['allPages']-1">
+            <li><a href="{:U('xiuxian/newestimages',array('p'=>$list['currentPage']+2))}">{$list['currentPage']+2}</a></li>
+        </if>
+        <li><a href="{:U('xiuxian/newestimages',array('p'=>$list['currentPage']+1))}">&raquo;</a></li>
+    </if>
+</ul>

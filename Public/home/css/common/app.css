@@ -1,0 +1,6 @@
+ul.am-dropdown-content,ul.am-dropdown-content>li{ min-width:100px; text-align:center;}
+ul li{ list-style: none;}
+/*菜单css*/
+.am-menu-dropdown1 .am-menu-toggle { top: -45px;}
+
+

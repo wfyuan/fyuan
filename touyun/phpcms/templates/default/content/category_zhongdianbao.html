@@ -1,0 +1,189 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>透云首页</title>
+    <link rel="icon" type="image/png" href="/touyun/statics/touyun/assets/i/favicon.png">
+    <!--公用的样式和js-->
+    <link rel="stylesheet" href="/touyun/statics/touyun/amaze/css/amazeui.min.css">
+    <link rel="stylesheet" href="/touyun/statics/touyun/css/common/app.css">
+    <script src="/touyun/statics/touyun/js/common/jquery-1.11.2.min.js"></script>
+    <script src="/touyun/statics/touyun/amaze/js/amazeui.min.js"></script>
+    <script src="/touyun/statics/touyun/js/common/app.js"></script>
+    <!--公用的over-->
+</head>
+<body>
+<!--首页专用的js，css-->
+<link rel="stylesheet" href="/touyun/statics/touyun/css/index/index.css">
+<script src="/touyun/statics/touyun/js/index/index.js"></script>
+<!-- <div class="index-nav">
+    <div class="container am-cf">
+        <ul class="nav am-cf am-fl">
+             {pc:content action="category" catid="0" num="5" siteid="$siteid" order="listorder ASC"}
+            {loop $data $r}
+           <li> <a href="{$r['url']}">{$r[catname]}</a></li>
+			{if $n==3} <li class="case1"><a href=""><img src="/touyun/statics/touyun/images/index/nav-logo.png"> </a></li>{/if}
+            {/loop}
+            {/pc}
+        </ul>
+        <div class="nav-focus am-fr">
+             <ul class="focus am-cf">
+                 <li><a class="case1" href=""></a> </li>
+                 <li><a class="case2" href=""></a> </li>
+                 <li><a class="case3" href=""></a> 021-61820853</li>
+             </ul>
+        </div>
+    </div>
+</div> -->
+{template "content","tyheader"}
+<!--头部完-->
+
+<!--案例列表-->
+<div class="anliBanner">
+    <img style="width: 100%;" class="am-img-responsive" src="/touyun/statics/touyun/images/zhongdianbao/zBanner.jpg">
+</div>
+<div class="anliList">
+    <div class="anliDetailWarp">
+        <nav class="anli-fixedNav" id="fixedNav" data-am-scrollspynav="{offsetTop: 45}">
+            <ul>
+                <li><a href="#about">产品简介</a></li>
+                <li><a href="#function">功能</a></li>
+                <li><a href="#ep">设备及<br>配件</a></li>
+            </ul>
+        </nav>
+        <div class="zgoodsBrief" id="about">
+            <h1>产品简介</h1>
+            <p>“众店宝”是透云科技旗下一款智能新零售产品，它包括面向零售门店的“透云智售”和面向品牌的“透云智购”。</p>
+            <p> “透云智售”包括门店智能设备、店主端APP应用和消费者端应用。旨在帮助店主高效实现出入库管理、电子记账对账、在线支付（包括微信、支付宝、 闪付等）、在线订货、会员系统、线上销售并享受品牌零售促销活动及实物兑奖优惠，以提高零售便利小店销售收入，实现利润最大化。</p>
+            <p> “透云智购”包括供货系统、精准广告投放系统、分销及新品促销活动系统、会员系统及数据洞察服务，致力于帮助品牌打通经销商、零售小店和消费者层层环节，建立品牌专属的完整生态，降低销售成本、提高营销效率。
+            </p>
+            <div class="img">
+                <img class="am-img-responsive" src="/touyun/statics/touyun/images/zhongdianbao/zbrief.jpg">
+            </div>
+        </div>
+
+        </div>
+
+        <div class="zfunction" id="function">
+             <div class="anliDetailWarp">
+                 <h1>功能</h1>
+                 <h2>进销存管理：</h2>
+                 <p>快速录入商品清单，创建商品库<br>
+                     即时库存情况更新<br>
+                     库存不足自动提醒</p>
+                 <h2>促销活动管理：</h2>
+                 <p>切实享受多重品牌促销优惠<br>
+                     优先成为品牌“一物一码”实物兑换点，直享品牌补贴<br>
+                     自行定制门店促销活动</p>
+                 <h2>电子记账：</h2>
+                 <p>交易流水直接生成电子账单<br>
+                     历史账单一键查询</p>
+                 <h2>在线订货：<span>100+快消品牌鼎力合作，确保进货价格更低，轻松赚更多；亚马劲线上订货平台，快速订货，低价更实惠</span></h2>
+                 <h2>线上门店：<span>开设线上门店吸引更多附近客流，对接店主或第三方配送</span></h2>
+                 <h2>多种支付：<span>提供包括微信、支付宝、 闪付等多种支付方式，一扫即买，收银更轻松</span></h2>
+             </div>
+        </div>
+
+        <div class="zGoodsParts" id="ep">
+            <div class="anliDetailWarp">
+            <h1>设备及配件</h1>
+            <p>门店智能设备：小屏为店主操作界面，大屏为消费者显示界面<br>
+                店主端APP应用：轻松管理门店<br>
+                消费者端应用：线上下单、送货上门、简单快捷<br>
+                加购可得与设备适配的收银盒、小票打印机、扫描枪等配件
+            </p>
+            <div class="img">
+                <img src="/touyun/statics/touyun/images/zhongdianbao/zparts.jpg">
+            </div>
+            <h3>贴心服务：</h3>
+            <div class="zService">
+                <h4>• &nbsp;&nbsp;&nbsp;&nbsp; 免费上门安装并录入商品</h4>
+                <h4>• &nbsp;&nbsp;&nbsp;&nbsp; 7*12小时服务热线</h4>
+                <h4>• &nbsp;&nbsp;&nbsp;&nbsp; 小店专员定期上门服务</h4>
+            </div>
+            </div>
+        </div>
+</div>
+<!--案例列表完-->
+<script>
+    $(function () {
+        var heightL = $("#about").offset().top;
+        var fixedNavL = ($(window).width()-900)/2 - 150;
+        $(window).scroll(function () {
+            var scrollTop = $(document).scrollTop();
+            if(scrollTop>heightL){
+                $('#fixedNav').css({'position':'fixed','left':fixedNavL+'px'})
+            }else{
+                $('#fixedNav').css({'position':'absolute','left': '-150px'})
+            }
+        })
+    })
+</script>
+
+<!--右边的操作部分-->
+<div class="aside-opation" id="asidePart">
+    <ul class="asideList">
+        <li class="case1">
+            <p><a href="">在线<br>客服</a></p>
+        </li>
+        <li class="case2">
+            <p>电话<br>热线</p>
+            <div class="mobileCont">
+                <div class="close">
+                    <span class="am-icon-remove"></span>
+                </div>
+                <h4>联系我们</h4>
+                <h5><span class="am-icon-phone"></span> 021-61820853</h5>
+            </div>
+        </li>
+        <li class="case3">
+            <p>扫码<br>关注</p>
+            <div class="mobileCont">
+                <div class="close">
+                    <span class="am-icon-remove"></span>
+                </div>
+                <img src="/touyun/statics/touyun/images/index/wechatcode.png">
+                <h3>透云官方微信</h3>
+            </div>
+        </li>
+        <li class="case4">
+
+        </li>
+    </ul>
+</div>
+
+<!-- <div class="footer">
+    <div class="container am-cf">
+        <div class="mapsite am-fl am-cf">
+		{pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
+            {loop $data $k $r}
+			<dl>
+                <dt>{$r[catname]}</dt>
+				{pc:content action="category" catid="$k" num="10" siteid="$siteid" order="listorder ASC"}
+				 {loop $data $r}
+                <dd><a href="{$r['url']}">{$r[catname]}</a></dd>
+				 {/loop}
+				{/pc}
+            </dl>
+            {/loop}
+            {/pc}
+       
+        </div>
+        <div class="touyuncode am-fr">
+            <p>透云官方微信</p>
+            <img src="/touyun/statics/touyun/images/index/wechatcode.png">
+        </div>
+        <div style="clear: both;"></div>
+        <div class="footer-bottom">
+            <p>© 2014-2017 SAO.SO 上海透云物联网科技有限公司 版权所有 | 沪ICP12016045号-4 网站地图<br>
+                沪公网安备 31010602001034号</p>
+        </div>
+    </div>
+</div> -->
+{template "content","tyend"}
+</body>
+</html>

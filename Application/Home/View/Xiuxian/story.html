@@ -1,0 +1,74 @@
+<include file="./Application/Home/View/Xiuxian/commontitle.html" />
+<div data-am-widget="titlebar" class="am-titlebar am-titlebar-multi am-text-nowrap  am-scrollable-horizontal" style="margin:0;border-top: 0;" >
+    <nav class="am-titlebar-nav am-padding-left-sm" style="text-align: left; " >
+        <a <if condition="$params['type'] eq dp">class="selected"</if> href="{:U('xiuxian/story',array('p'=>1,'type'=>'dp'))}" class="">热门</a>
+        <a <if condition="$params['type'] eq cp">class="selected"</if> href="{:U('xiuxian/story',array('p'=>1,'type'=>'cp'))}" class="">长篇</a>
+        <a <if condition="$params['type'] eq xy">class="selected"</if> href="{:U('xiuxian/story',array('p'=>1,'type'=>'xy'))}" class="">校园</a>
+        <a <if condition="$params['type'] eq yy">class="selected"</if> href="{:U('xiuxian/story',array('p'=>1,'type'=>'yy'))}" class="">医院</a>
+        <a <if condition="$params['type'] eq jl">class="selected"</if> href="{:U('xiuxian/story',array('p'=>1,'type'=>'jl'))}" class="">家里</a>
+        <a <if condition="$params['type'] eq mj">class="selected"</if> href="{:U('xiuxian/story',array('p'=>1,'type'=>'mj'))}" class="">民间</a>
+        <a <if condition="$params['type'] eq ly">class="selected"</if> href="{:U('xiuxian/story',array('p'=>1,'type'=>'ly'))}" class="">灵异</a>
+        <a <if condition="$params['type'] eq yc">class="selected"</if> href="{:U('xiuxian/story',array('p'=>1,'type'=>'yc'))}" class="">原创</a>
+        <a <if condition="$params['type'] eq neihanguigushi">class="selected"</if> href="{:U('xiuxian/story',array('p'=>1,'type'=>'neihanguigushi'))}" class="">内涵</a>
+    </nav>
+</div>
+<div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+   <div class="am-list-news-bd">
+        <ul class="am-list">
+            <volist name="list['pagebean']['contentlist']" id="v">
+            <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+                <div class="am-u-sm-4 am-list-thumb">
+                    <a href="/home/xiuxian/storydetail{$v.id}" class="">
+                        <img src="{$v.img}" alt="{$v.title}"/>
+                    </a>
+                </div>
+                <div class=" am-u-sm-8 am-list-main">
+                    <h3 class="am-list-item-hd">
+                        <a href="/home/xiuxian/storydetail/{$v.id}" class="">{$v.title}</a>
+                    </h3>
+                    <div class="am-list-item-text">{$v.desc}</div>
+                </div>
+            </li>
+            </volist>
+          </ul>
+    </div>
+</div>
+
+<ul data-am-widget="pagination" class="am-pagination am-pagination-select">
+    <li class="am-pagination-prev ">
+        <if condition="$list['pagebean']['currentPage'] neq 1">
+            <a href="{:U('xiuxian/story',array('p'=>$list['pagebean']['currentPage']-1,'type'=>$params['type']))}" class="">上一页</a>
+            <else/>
+            <a href="javascript:void(0);" class="">上一页</a>
+        </if>
+    </li>
+    <li class="am-pagination-select selected">
+        <select id="fastPage">
+            <volist name="list['pagebean']['fastPage']" id="v" key="k">
+            <option value="/Home/xiuxian/story/p/{$v}/type/{$params['type']}" <if condition="$v eq $list['pagebean']['currentPage']">selected</if> value="#" class="">{$v}/{$list['pagebean']['allPages']}</option>
+            </volist>
+        </select>
+    </li>
+    <li class="am-pagination-next ">
+        <a href="{:U('xiuxian/story',array('p'=>$list['pagebean']['currentPage']+1,'type'=>$params['type']))}" class="">下一页</a>
+    </li>
+</ul>
+<style>
+    .am-titlebar-nav a{ color: #999; }
+    .am-titlebar-nav a.selected{ color: #0e90d2}
+.am-list-item-hd a{ color: #666;}
+.am-list-news-default .am-list .am-list-item-desced .am-list-item-text{ color: #999;}
+.am-pagination li{border: 1px solid #ddd; background-color: #fff;}
+.am-pagination>li>a{ margin: 0; background: #fff;    color: #0e90d2;}
+.am-pagination-select .am-pagination-select{ width: 72px; height: 38px;}
+.am-pagination-select .am-pagination-select select{ background: #fff; outline: 0; padding-left: 5px; text-align: center;}
+</style>
+<script>
+    $(function(){
+        $('#fastPage').change(function(){
+            var goPage = $(this).val();
+            window.location.href = goPage;
+        });
+    })
+</script>
+

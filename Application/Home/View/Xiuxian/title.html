@@ -1,0 +1,40 @@
+<header data-am-widget="header"  class="am-header am-header-default" data-am-sticky>
+    <div class="am-header-left am-header-nav">
+        <a onclick="javascript:history.back(-1);" href="javascript:;" class="">
+            <i class="am-header-icon am-icon-chevron-left"></i>
+        </a>
+    </div>
+    <h1 class="am-header-title">
+        <a href="#title-link" class="">{$title}</a>
+    </h1>
+    <div class="am-header-right am-header-nav am-dropdown">
+        <a href="#doc-oc-demo1" class="am-dropdown-toggle" data-am-offcanvas="{effect: 'push'}">
+            <i class="am-header-icon am-icon-bars"></i>
+        </a>
+    </div>
+</header>
+<div id="doc-oc-demo1" class="am-offcanvas">
+    <div class="am-offcanvas-bar am-offcanvas-bar-flip">
+        <ul class="am-menu-nav am-avg-sm-2 public_nav">
+            <li class="">
+            </li>
+            <li class="">
+                <a href="{:U('xiuxian/index')}" class="am-btn am-btn-default">智友休闲</a>
+            </li>
+            <li class="">
+                <a href="{:U('xiuxian/newest')}" class="am-btn am-btn-default">最新笑话</a>
+            </li>
+            <li class="">
+                <a href="{:U('xiuxian/newestimages')}" class="am-btn am-btn-default">动态搞笑</a>
+            </li>
+            <li class="">
+                <a href="{:U('xiuxian/story')}" class="am-btn am-btn-default">鬼故事</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<style>
+    .public_nav{ padding: 1em 0.5em;}
+    .public_nav li{ padding: 0.3em 0.5em; opacity: 0.7;}
+    .public_nav li .am-btn-default{ background-color:#404040; color: #ccc; border: 1px solid #666;}
+</style>

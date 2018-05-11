@@ -1,0 +1,91 @@
+<!-- Animate.css -->
+<link rel="stylesheet" href="/Public/home/css/xiuxian/newestimages/animate.css">
+
+<!-- Magnific Popup -->
+<link rel="stylesheet" href="/Public/home/css/xiuxian/newestimages/magnific-popup.css">
+<!-- Salvattore -->
+<link rel="stylesheet" href="/Public/home/css/xiuxian/newestimages/salvattore.css">
+<!-- Theme Style -->
+<link rel="stylesheet" href="/Public/home/css/xiuxian/newestimages/style.css">
+
+<div id="fh5co-offcanvass">
+    <a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close">Menu <i class="icon-cross"></i> </a>
+    <h1 class="fh5co-logo"><a class="navbar-brand" href="index.html">智友最新趣图</a></h1>
+    <ul>
+        <li class="active"><a href="javascript:;">Home</a></li>
+        <li><a href="javascript:;">About</a></li>
+        <li><a href="javascript:;">Pricing</a></li>
+        <li><a href="javascript:;">Contact</a></li>
+    </ul>
+    <h3 class="fh5co-lead">Connect with us</h3>
+    <p class="fh5co-social-icons">
+        <a href="#"><i class="am-icon-home"></i></a>
+        <a href="#"><i class="am-icon-home"></i></a>
+        <a href="#"><i class="am-icon-home"></i></a>
+        <a href="#"><i class="am-icon-home"></i></a>
+        <a href="#"><i class="am-icon-home"></i></a>
+    </p>
+</div>
+<header id="fh5co-header" role="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="#" class="fh5co-menu-btn js-fh5co-menu-btn">Menu <i class="am-icon-bars"></i></a>
+                <a class="navbar-brand" href="index.html">智友最新趣图</a>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- END .header -->
+
+<div id="fh5co-main">
+    <div class="container">
+        <div class="row">
+            <div id="fh5co-board" data-columns>
+                <volist name="list.contentlist" id="v">
+                    <div class="item">
+                        <div class="animate-box">
+                            <a href="{$v.img}" class="image-popup fh5co-board-img">
+                                <img src="{$v.img}" alt="{$v.title}">
+                            </a>
+                        </div>
+                        <div class="fh5co-desc">
+                            {$v.title}<br>{$v.ct}
+                        </div>
+                    </div>
+                </volist>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="width: 200px; margin: 0 auto;">
+    <button  id="addImgdata" class="btn btn-success btn-block">加载更多</button>
+</div>
+<footer id="fh5co-footer">
+    <div class="container">
+        <div class="row row-padded">
+            <div class="col-md-12 text-center">
+                <p class="fh5co-social-icons">
+                    <a href="#"><i class="am-icon-arrow-up"></i></a>
+                    <a href="#"><i class="am-icon-arrow-up"></i></a>
+                    <a href="#"><i class="am-icon-arrow-up"></i></a>
+                    <a href="#"><i class="am-icon-arrow-up"></i></a>
+                    <a href="#"><i class="am-icon-arrow-up"></i></a>
+                </p>
+                <p>
+                    <small>&copy; Hydrogen Free HTML5 Template. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="/Public/home/js/xiuxian/newestimages/jquery.waypoints.min.js"></script>
+<!-- Magnific Popup -->
+<script src="/Public/home/js/xiuxian/newestimages/jquery.magnific-popup.min.js"></script>
+<!-- Salvattore -->
+<script src="/Public/home/js/xiuxian/newestimages/salvattore.min.js"></script>
+<!-- Main JS -->
+<script src="/Public/home/js/xiuxian/newestimages/main.js"></script>

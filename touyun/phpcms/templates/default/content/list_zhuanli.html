@@ -1,0 +1,115 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="description" content="{$SEO['description']}">
+    <meta name="keywords" content="{$SEO['keyword']}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+    <link rel="icon" type="image/png" href="/touyun/statics/touyun/amaze/i/favicon.png">
+    <!--公用的样式和js-->
+    <link rel="stylesheet" href="/touyun/statics/touyun/amaze/css/amazeui.min.css">
+    <link rel="stylesheet" href="/touyun/statics/touyun/css/common/app.css">
+    <script src="/touyun/statics/touyun/js/common/jquery-1.11.2.min.js"></script>
+    <script src="/touyun/statics/touyun/amaze/js/amazeui.min.js"></script>
+    <script src="/touyun/statics/touyun/js/common/app.js"></script>
+    <!--公用的over-->
+</head>
+<body>
+<style>
+    h1{ font-weight: bold; }
+</style>
+<!--首页专用的js，css-->
+<link rel="stylesheet" href="/touyun/statics/touyun/css/index/index.css">
+{template "content","tyheader"}
+<!--头部完-->
+<div class="anliBanner">
+    <img style="width: 100%;" class="am-img-responsive" src="/touyun/statics/touyun/images/shiming/zlBanner.jpg">
+</div>
+
+<Div class="zhuanType1" style="background: #fff;">
+    <div class="smContainer">
+        <h1 style="color:#0D5899">专利</h1>
+        <ul data-am-widget="gallery" class="zhuanliList am-avg-sm-4 am-gallery-default" data-am-gallery="{ pureview: true }" >
+ {pc:content  action="lists"  catid=11 order="id DESC" num="25" }
+
+ {loop $data $key $val}           
+		   <li>
+                <div class="am-gallery-item">
+                    <!-- <a href="" class=""> -->
+                        <div class="img">
+                        <img src="{$val['thumb']}"  />
+                        </div>
+                        <h3 class="am-gallery-title">{$val['title']}</h3>
+                   <!--  </a> -->
+                </div>
+            </li>
+   {/loop}  
+ {/pc}   
+        </ul>
+
+    </div>
+</Div>
+
+<Div class="zhuanType1" style="padding-bottom: 80px; background: url('images/shiming/zlPic3.jpg') no-repeat bottom center #fff; ">
+    <div class="smContainer">
+        <h1 style="padding-top: 120px;color:#0D5899">奖项</h1>
+        <ul data-am-widget="gallery" class="zhuanliList am-avg-sm-3 am-gallery-default" data-am-gallery="{ pureview: true }" >
+				 {pc:content  action="lists"  catid=12 order="id DESC" num="25" }
+
+ {loop $data $key $val}           
+		   <li>
+                <div class="am-gallery-item">
+                    <!-- <a href="" class=""> -->
+                        <div class="img">
+                        <img src="{$val['thumb']}"  />
+                        </div>
+                        <h3 class="am-gallery-title">{$val['title']}</h3>
+                   <!--  </a> -->
+                </div>
+            </li>
+   {/loop}  
+ {/pc}  
+		   
+
+        </ul>
+
+    </div>
+</Div>
+<!--右边的操作部分-->
+<div class="aside-opation" id="asidePart">
+    <ul class="asideList">
+        <li class="case1">
+            <p><a href="">在线<br>客服</a></p>
+        </li>
+        <li class="case2">
+            <p>电话<br>热线</p>
+            <div class="mobileCont">
+                <div class="close">
+                    <span class="am-icon-remove"></span>
+                </div>
+                <h4>联系我们</h4>
+                <h5><span class="am-icon-phone"></span> 021-61820853</h5>
+            </div>
+        </li>
+        <li class="case3">
+            <p>扫码<br>关注</p>
+            <div class="mobileCont">
+                <div class="close">
+                    <span class="am-icon-remove"></span>
+                </div>
+                <img src="/touyun/statics/touyun/images/index/wechatcode.png">
+                <h3>透云官方微信</h3>
+            </div>
+        </li>
+        <li class="case4">
+
+        </li>
+    </ul>
+</div>
+
+{template "content","tyend"}
+
+</body>
+</html>

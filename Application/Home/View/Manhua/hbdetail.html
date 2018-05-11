@@ -1,0 +1,15 @@
+<include file="./Application/Home/View/Manhua/title.html" />
+<figure data-am-widget="figure" class="am am-figure am-figure-default "   data-am-figure="{  pureview: 'true' }" style="margin: 0;">
+    <figcaption class="am-figure-capition-btm am-text-left" style="padding: 5px 0 0 5px; margin-bottom: 5px;">
+        {$detail.title}-{$detail.type}<br><span style="color: #999;">{$detail.time}</span>
+    </figcaption>
+    <volist name="detail.imgList" id="v">
+        <img style="margin: 0; padding: 0; border: 0" src="{$v}" data-rel="{$v}" alt="{$detail.title}"/>
+    </volist>
+</figure>
+<div class="amz-toolbar" id="amz-toolbar" style="right: 10px;">
+    <a data-am-smooth-scroll title="回到顶部" class="am-icon-btn am-icon-arrow-up am-active go-top" id="amz-go-top"></a>
+</div>
+<style>
+    .go-top{ position: fixed; bottom: 10px; right: 10px; opacity: 0.6;}
+</style>

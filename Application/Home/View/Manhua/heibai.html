@@ -1,0 +1,51 @@
+<include file="./Application/Home/View/Manhua/title.html" />
+<div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+    <div class="am-list-news-bd">
+        <ul class="am-list">
+            <volist name="list.pagebean.contentlist" id="v">
+            <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-top">
+                <div class=" am-list-main">
+                    <h3 class="am-list-item-hd">
+                        <a href="/home/manhua/hbdetail/type/{$v.type}/id/{$v.num}" class="">{$v.title|substr=0,-12}智友漫画</a></h3>
+                </div>
+                <ul data-am-widget="gallery" class="am-avg-sm-3  am-gallery-default" data-am-gallery="{ pureview: false}" >
+                    <volist name="v.thumbnailList" id="vo">
+                    <li>
+                        <div class="am-gallery-item">
+                            <a href="/home/manhua/hbdetail/type/{$v.type}/id/{$v.num}" class="">
+                                <img src="{$vo}" />
+                            </a>
+                        </div>
+                    </li>
+                    </volist>
+                </ul>
+                <div class=" am-list-main">
+                    <div class="am-list-item-text">{$v.time}</div>
+                </div>
+            </li>
+            </volist>
+        </ul>
+    </div>
+
+</div>
+<style>
+    .am-gallery-default li{ padding: 5px 5px 0;}
+</style>
+
+<ul class="am-pagination am-pagination-centered">
+    <if condition="$list['pagebean']['currentPage'] neq 1">
+        <li><a href="{:U('manhua/heibai',array('type'=>$list['type'],'p'=>$list['pagebean']['currentPage']-1))}">&laquo;</a></li>
+        <if condition="$list['pagebean']['currentPage'] neq 2">
+            <li><a href="{:U('manhua/heibai',array('type'=>$list['type'],'p'=>$list['pagebean']['currentPage']-2))}">{$list['pagebean']['currentPage']-2}</a></li>
+        </if>
+        <li><a href="{:U('manhua/heibai',array('type'=>$list['type'],'p'=>$list['pagebean']['currentPage']-1))}">{$list['pagebean']['currentPage']-1}</a></li>
+    </if>
+    <li  class="am-active"><a href="javascript:void(0);">{$list.pagebean.currentPage}</a></li>
+    <if condition="$list['pagebean']['hasMorePage'] eq true">
+        <li><a href="{:U('manhua/heibai',array('type'=>$list['type'],'p'=>$list['pagebean']['currentPage']+1))}">{$list['pagebean']['currentPage']+1}</a></li>
+        <if condition="$list['currentPage'] LT $list['allPages']-1">
+            <li><a href="{:U('manhua/heibai',array('type'=>$list['type'],'p'=>$list['pagebean']['currentPage']+2))}">{$list['pagebean']['currentPage']+2}</a></li>
+        </if>
+        <li><a href="{:U('manhua/heibai',array('type'=>$list['type'],'p'=>$list['pagebean']['currentPage']+1))}">&raquo;</a></li>
+    </if>
+</ul>

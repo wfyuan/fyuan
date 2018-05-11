@@ -1,0 +1,40 @@
+<include file="./Application/Home/View/Xiuxian/title.html" />
+
+<div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+    <!--列表标题-->
+    <div class="am-list-news-bd">
+        <ul class="am-list">
+            <volist name="ret['contentlist']" id="v">
+            <li class="am-g am-list-item-desced">
+                <a href="javascript:;" class="am-list-item-hd ">{$v.title}</a>
+                <div class="am-list-item-text">{$v.text}</div>
+                <div class="am-list-item-text">{$v.ct|substr=0,19}</div>
+            </li>
+            </volist>
+        </ul>
+    </div>
+</div>
+<style>
+    .am-list-news-default .am-list .am-list-item-text {
+        -webkit-line-clamp: 1000;  max-height: 26em;
+    }
+    p{ padding: 0; margin: 0; padding-bottom: 10px;}
+</style>
+
+<ul class="am-pagination am-pagination-centered">
+    <if condition="$ret['currentPage'] neq 1">
+        <li><a href="{:U('xiuxian/newest',array('p'=>$ret['currentPage']-1))}">&laquo;</a></li>
+        <if condition="$ret['currentPage'] neq 2">
+            <li><a href="{:U('xiuxian/newest',array('p'=>$ret['currentPage']-2))}">{$ret['currentPage']-2}</a></li>
+        </if>
+        <li><a href="{:U('xiuxian/newest',array('p'=>$ret['currentPage']-1))}">{$ret['currentPage']-1}</a></li>
+    </if>
+    <li  class="am-active"><a href="javascript:void(0);">{$ret.currentPage}</a></li>
+    <if condition="$ret['currentPage'] LT $ret['allPages']">
+        <li><a href="{:U('xiuxian/newest',array('p'=>$ret['currentPage']+1))}">{$ret['currentPage']+1}</a></li>
+        <if condition="$ret['currentPage'] LT $ret['allPages']-1">
+            <li><a href="{:U('xiuxian/newest',array('p'=>$ret['currentPage']+2))}">{$ret['currentPage']+2}</a></li>
+        </if>
+        <li><a href="{:U('xiuxian/newest',array('p'=>$ret['currentPage']+1))}">&raquo;</a></li>
+    </if>
+</ul>

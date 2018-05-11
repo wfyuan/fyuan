@@ -1,0 +1,29 @@
+<div class="footer" id="footer">
+    <div class="container1000 am-cf">
+        <div class="mapsite am-fl am-cf">
+			{pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
+			 {loop $data $k $r}
+            <dl>
+                <dt>{$r[catname]}</dt>
+				{pc:content action="category" catid="$k" num="10" siteid="$siteid" order="listorder ASC"}
+ {loop $data $r}
+                
+                 <dd><a href="{$r['url']}">{$r[catname]}</a></dd>
+				 {/loop}
+				{/pc}
+            </dl>
+			 {/loop}
+            {/pc}
+          
+        </div>
+        <div class="touyuncode am-fr">
+            <p class='am-text-center'>扫一扫，关注透云</p>
+            <img src="/touyun/statics/touyun/images/index/wechatcode.png">
+        </div>
+        <div style="clear: both;"></div>
+        <div class="footer-bottom">
+            <p>© 2014-2018 SAO.SO 上海透云物联网科技有限公司 版权所有 | 沪ICP12016045号-4 网站地图<br>
+                沪公网安备 31010602001034号1111</p>
+        </div>
+    </div>
+</div>
